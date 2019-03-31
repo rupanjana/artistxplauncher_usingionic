@@ -10,11 +10,13 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { ShareinstagramPage } from '../pages/shareinstagram/shareinstagram';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    ShareinstagramPage
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,8 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,ShareinstagramPage
+
   ],
   providers: [
     StatusBar,

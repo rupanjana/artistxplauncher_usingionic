@@ -4,30 +4,30 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Instagram } from '@ionic-native/instagram';
 import { SocialSharing } from '@ionic-native/social-sharing';
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+    selector: 'page-home',
+    templateUrl: 'home.html'
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController,private iab: InAppBrowser,private instagram: Instagram,private socialSharing: SocialSharing) {
-    //this.iab.create('https://development.artistxp.com/','_system');
+    constructor(public navCtrl: NavController,private iab: InAppBrowser,private instagram: Instagram,private socialSharing: SocialSharing) {
+       // this.iab.create('https://development.artistxp.com/','_system');
 
 
 
 
 
-    let TIME_IN_MS = 2000;
-    let hideFooterTimeout = setTimeout( () => {
-      //alert(' args before in home ');
-      // somecode
+       /* let TIME_IN_MS = 2000;
+        let hideFooterTimeout = setTimeout( () => {
+            //alert(' args before in home ');
+            // somecode
 
-      //alert(' args after in home ');
-      this.instashare();
+            //alert(' args after in home ');
+            this.instashare();
 
-    }, TIME_IN_MS);
+        }, TIME_IN_MS);*/
 
 
-  }
+    }
     instashare(){
 
 
@@ -49,6 +49,10 @@ export class HomePage {
 
 
 
+    }
+
+    ionViewDidLoad() {
+        console.log('ionViewDidLoad HomePage');
     }
 
 }
