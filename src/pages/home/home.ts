@@ -1,16 +1,32 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Instagram } from '@ionic-native/instagram';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { Storage } from '@ionic/storage';
+import {LoginPage} from '../login/login'
+import {MedialistPage} from '../medialist/medialist'
 @Component({
     selector: 'page-home',
     templateUrl: 'home.html'
 })
 export class HomePage {
+    @ViewChild('myNav') nav;
+    instaglag:any;
+    loginpage:LoginPage;
 
-    constructor(public navCtrl: NavController,private iab: InAppBrowser,private instagram: Instagram,private socialSharing: SocialSharing) {
-       // this.iab.create('https://development.artistxp.com/','_system');
+    constructor(public navCtrl: NavController,private iab: InAppBrowser,private instagram: Instagram,private socialSharing: SocialSharing,private storage: Storage) {
+
+        storage.get('isinsta').then((val) => {
+            console.log('Your isinsta is', val);
+            this.instaglag=val;
+            //alert('Your isinsta is'+val);
+           // if(val==false || val==null) this.iab.create('https://development.artistxp.com/','_system');
+            //if(val==true) this.instashare();
+        });
+
+
+
 
 
 
@@ -28,6 +44,14 @@ export class HomePage {
 
 
     }
+    gotologin(){
+        this.navCtrl.push(LoginPage);
+    }
+    gotomedia(){
+        this.iab.create('https://development.artistxp.com/','_system');
+    }
+
+
     instashare(){
 
 
@@ -37,14 +61,14 @@ export class HomePage {
 
         }).catch(() => {
             // Sharing via email is not possible
-            alert('in can share insta catch');
+            //alert('in can share insta catch');
         });
 
         this.socialSharing.shareViaInstagram('test','https://developmentapi.audiodeadline.com/nodeserver/uploads/pictures/5c409e01a3d1bf857f1ecbe9/updatedpdfaboutaffilates-1552669785.jpg').then(()=>{
 
         }).catch (()=>{
 
-            alert('in share catch');
+            //alert('in share catch');
         });
 
 

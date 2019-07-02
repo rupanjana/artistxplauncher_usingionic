@@ -11,26 +11,33 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ShareinstagramPage } from '../pages/shareinstagram/shareinstagram';
+import { LoginPage } from '../pages/login/login';
+import { MedialistPage } from '../pages/medialist/medialist';
+import { IonicStorageModule } from '@ionic/storage';
+import { HttpClientModule } from '@angular/common/http';
+import { HTTP } from '@ionic-native/http';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ShareinstagramPage
+    ShareinstagramPage,LoginPage,MedialistPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpClientModule,
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,ShareinstagramPage
+    HomePage,ShareinstagramPage,LoginPage,MedialistPage
 
   ],
   providers: [
     StatusBar,
-    SplashScreen,InAppBrowser,Deeplinks,Instagram,SocialSharing,
+    SplashScreen,InAppBrowser,Deeplinks,Instagram,SocialSharing,HTTP,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

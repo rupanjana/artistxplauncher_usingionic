@@ -20,10 +20,12 @@ export class ShareinstagramPage {
 
     constructor(public navCtrl: NavController, public navParams: NavParams,private instagram: Instagram,private socialSharing: SocialSharing,private iab: InAppBrowser) {
 
+        //alert('in insta share component');
         this.instashare();
     }
 
     instashare(){
+        //alert('in insta share component instashare func');
 
 
         this.socialSharing.canShareVia('instagram').then(() => {
@@ -32,14 +34,17 @@ export class ShareinstagramPage {
 
         }).catch(() => {
             // Sharing via email is not possible
-            alert('in can share insta catch');
+            //alert('in can share insta catch');
         });
 
         this.socialSharing.shareViaInstagram('test','https://developmentapi.audiodeadline.com/nodeserver/uploads/pictures/5c409e01a3d1bf857f1ecbe9/updatedpdfaboutaffilates-1552669785.jpg').then(()=>{
+            alert('in insta call');
+            // this.socialSharing.shareViaEmail('Body', 'Subject', ['recipient@example.org'recipient@example.org']).then(() => {
+            // Success!
 
         }).catch (()=>{
 
-            alert('in share catch');
+            //alert('in share catch');
         });
 
 

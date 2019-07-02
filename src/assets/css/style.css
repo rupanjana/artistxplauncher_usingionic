@@ -1,0 +1,274 @@
+body{ margin:0 ; padding: 0; background-color: #080808;}
+
+@font-face {
+    font-family: 'OpenSansBold';
+    src: url('../fonts/OpenSans-Bold.woff2') format('woff2'),
+    url('../fonts/OpenSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSansRegu';
+    src: url('../fonts/OpenSans.woff2') format('woff2'),
+    url('../fonts/OpenSans.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'OpeSansSemibold';
+    src: url('../fonts/OpenSans-Semibold.woff2') format('woff2'),
+    url('../fonts/OpenSans-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+.content-md {
+    background: none!important;
+}
+
+.content-ios{
+    background: none!important;
+}
+
+/*----------------home------------------*/
+
+.home_body{ background: #080808 url("../imgs/mb_homebg.png") no-repeat center bottom!important; background-size: cover; width: 100vw; height: 100%; position: relative}
+
+.home_body ion-content{ padding: 15px;}
+
+
+.homelogo{ display: block; margin: 0 auto; width: 60%; margin-top: 25px;}
+
+
+.home_btmbroup{ padding:0 0 25px 0; position: absolute; left: 0; bottom: 0; display: block; width: 100%;}
+
+.home_btmbroup button{ display: block; width: 700px; margin: 15px auto; cursor: pointer; border: none; outline: none; box-shadow: none; background: rgba(253,148,0,1);
+    background: -moz-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(253,148,0,1)), color-stop(100%, rgba(230,84,0,1)));
+    background: -webkit-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
+    background: -o-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
+    background: -ms-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
+    background: linear-gradient(to bottom, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd9400', endColorstr='#e65400', GradientType=0 ); font-family: 'OpeSansSemibold'; font-size: 60px; color: #fff; text-transform: uppercase; text-align: center; border-radius: 10px; padding: 15px 0; line-height: 65px; text-shadow: 1px 1px 2px #fd9100;}
+
+.home_btmbroup button:hover{background: rgba(40,42,44,1);
+    background: -moz-linear-gradient(top, rgba(40,42,44,1) 0%, rgba(38,38,38,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(40,42,44,1)), color-stop(100%, rgba(38,38,38,1)));
+    background: -webkit-linear-gradient(top, rgba(40,42,44,1) 0%, rgba(38,38,38,1) 100%);
+    background: -o-linear-gradient(top, rgba(40,42,44,1) 0%, rgba(38,38,38,1) 100%);
+    background: -ms-linear-gradient(top, rgba(40,42,44,1) 0%, rgba(38,38,38,1) 100%);
+    background: linear-gradient(to bottom, rgba(40,42,44,1) 0%, rgba(38,38,38,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#282a2c', endColorstr='#262626', GradientType=0 ); color: #93979a; text-shadow: none;}
+
+
+
+@media screen and (max-width: 767px) {
+    .home_btmbroup button {
+        width: 580px;
+        font-size: 40px;
+        line-height: 45px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .home_btmbroup button{font-size: 30px; line-height: 35px; width: 480px;}
+
+    .homelogo{ width: auto; max-width: 480px;}
+}
+
+@media screen and (max-width: 500px) {
+
+    .home_btmbroup button{ width: 90%;  }
+
+    .homelogo{ width: auto; max-width: 90%;}
+
+}
+
+
+/*----------------login------------------*/
+
+.login_body{ background: #101629 url("../imgs/mb_login_bg.jpg") no-repeat center top; background-size: cover; width: 100vw; height: 100vh; position: relative;     margin: 0px; overflow: scroll; height: 100%;  }
+
+
+.loginlogo{ width: auto; max-width: 90%; display:block; margin: 0 auto; margin-top: 80px;   }
+
+
+.login_body .scroll-content{  position: inherit; overflow: inherit;}
+.login_body .fixed-content{  position: inherit; overflow: inherit;}
+
+
+.login_form_input_body{padding:0 0 30px 0; position: absolute; left: 0; bottom: 0; display: block; width: 100%; z-index: 99;}
+
+
+.logininputdiv_wrapper{ width: 520px; display: block; padding:8px 16px; background: rgba(0, 0, 0, 0.5); border-radius: 10px; margin: 0 auto;}
+
+
+.logininputdiv{width: 100%; height: 60px; margin: 8px 0; clear: both; overflow: hidden;  }
+
+.logininputdiv span{ display: block; width: 78px; background:#121322 url("../imgs/mb_login_arrow.jpg") no-repeat right center;  float: left; height: 60px; }
+
+.logininputdiv span img{ display: block; width: 22px; margin: 16px 0 0 20px;}
+
+.logininputdiv ion-input{ width: 411px; display: block; float: left; height: 60px; background: #fff; padding: 15px 10px;  font-family: 'OpenSansRegu'; font-size: 16px;  color: #000; margin-left: -1px;}
+
+
+.logininputdiv  .text-input-md {
+    margin: 4px 0 0 0;}
+
+
+.login_form_input_body button{ display: block; width: 520px; margin: 15px auto; cursor: pointer; border: none; outline: none; box-shadow: none; background: rgba(253,148,0,1);
+    background: -moz-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(253,148,0,1)), color-stop(100%, rgba(230,84,0,1)));
+    background: -webkit-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
+    background: -o-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
+    background: -ms-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
+    background: linear-gradient(to bottom, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd9400', endColorstr='#e65400', GradientType=0 ); font-family: 'OpeSansSemibold'; font-size: 60px; color: #fff; text-transform: uppercase; text-align: center; border-radius: 10px; padding: 15px 0; line-height: 65px; text-shadow: 1px 1px 2px #fd9100; margin-top: 30px;}
+
+@media screen and (max-width: 980px) {
+    .loginlogo{ width: auto; max-width: 80%; display:block; margin: 0 auto; margin-top: 22%;   }
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .logininputdiv_wrapper{ width: 480px; }
+
+    .logininputdiv ion-input{ width: 370px;}
+
+    .login_form_input_body button{ width: 480px; font-size: 30px; line-height: 35px; }
+
+
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .logininputdiv_wrapper{ width: 90% }
+
+    .logininputdiv ion-input{ width: 70%;}
+    .logininputdiv span{ width: 30%;}
+
+    .login_form_input_body button{ width: 90%;}
+}
+
+/*----------------Media page------------------*/
+
+.medialist_body{ background: #080808;    width: 100vw;    display: block; margin: 0px;   overflow: scroll; height: 100%;   }
+
+.medialist_con1{ background: url("../imgs/mb_bg1.png") no-repeat center top; background-size: 100%; width: 100%;}
+
+.medialist_body .scroll-content{  position: inherit; overflow: inherit; display: none;}
+.medialist_body .fixed-content{  position: inherit; overflow: inherit; display: none;}
+
+
+.medialistlogo{ width: auto; max-width: 90%; display:block; margin: 0 auto; margin-top: 120px;   }
+
+
+.medialist_con1 button{ display: block; width: 700px; margin: 15px auto; cursor: pointer; border: none; outline: none; box-shadow: none; background: rgba(253,148,0,1);
+    background: -moz-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(253,148,0,1)), color-stop(100%, rgba(230,84,0,1)));
+    background: -webkit-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
+    background: -o-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
+    background: -ms-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
+    background: linear-gradient(to bottom, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd9400', endColorstr='#e65400', GradientType=0 ); font-family: 'OpeSansSemibold'; font-size: 60px; color: #fff; text-transform: uppercase; text-align: center; border-radius: 10px; padding: 15px 0; line-height: 65px; text-shadow: 1px 1px 2px #fd9100;}
+
+.medialist_con1 button:hover{background: rgba(40,42,44,1);
+    background: -moz-linear-gradient(top, rgba(40,42,44,1) 0%, rgba(38,38,38,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(40,42,44,1)), color-stop(100%, rgba(38,38,38,1)));
+    background: -webkit-linear-gradient(top, rgba(40,42,44,1) 0%, rgba(38,38,38,1) 100%);
+    background: -o-linear-gradient(top, rgba(40,42,44,1) 0%, rgba(38,38,38,1) 100%);
+    background: -ms-linear-gradient(top, rgba(40,42,44,1) 0%, rgba(38,38,38,1) 100%);
+    background: linear-gradient(to bottom, rgba(40,42,44,1) 0%, rgba(38,38,38,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#282a2c', endColorstr='#262626', GradientType=0 ); color: #93979a; text-shadow: none;}
+
+
+.medialist_con1_btnwrapper{ margin-top: 62%;}
+
+.medialist_contain{ margin: 15px 15px; border-bottom: solid 2px #ddd; text-align: center; padding: 25px 0;  }
+
+.medialist_contain2{ border: none; margin-bottom: 0px; padding-bottom: 0px;}
+
+.medialist_contain h2{ margin: 0px; padding: 10px 0; text-transform: uppercase; font-size: 60px; color: #fff; font-family: 'OpeSansSemibold';}
+
+.medialist_contain p{margin: 0px; padding: 10px 0;  font-size: 36px; color: #a7a6a6; font-family: 'OpenSansRegu';}
+
+.medialist_contain h2 span{ color: #f98700;}
+
+
+
+.medialist_contain button{ display: block; width: 700px; margin: 15px auto; margin-top: 20px; cursor: pointer; border: none; outline: none; box-shadow: none; background: rgba(253,148,0,1);
+    background: -moz-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(253,148,0,1)), color-stop(100%, rgba(230,84,0,1)));
+    background: -webkit-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
+    background: -o-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
+    background: -ms-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
+    background: linear-gradient(to bottom, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd9400', endColorstr='#e65400', GradientType=0 ); font-family: 'OpeSansSemibold'; font-size: 60px; color: #fff; text-transform: uppercase; text-align: center; border-radius: 10px; padding: 15px 0; line-height: 65px; text-shadow: 1px 1px 2px #fd9100;}
+
+.medialist_contain button:hover{background: rgba(40,42,44,1);
+    background: -moz-linear-gradient(top, rgba(40,42,44,1) 0%, rgba(38,38,38,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(40,42,44,1)), color-stop(100%, rgba(38,38,38,1)));
+    background: -webkit-linear-gradient(top, rgba(40,42,44,1) 0%, rgba(38,38,38,1) 100%);
+    background: -o-linear-gradient(top, rgba(40,42,44,1) 0%, rgba(38,38,38,1) 100%);
+    background: -ms-linear-gradient(top, rgba(40,42,44,1) 0%, rgba(38,38,38,1) 100%);
+    background: linear-gradient(to bottom, rgba(40,42,44,1) 0%, rgba(38,38,38,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#282a2c', endColorstr='#262626', GradientType=0 ); color: #93979a; text-shadow: none;}
+
+
+.medialist_contain  a{ margin: 0px; padding: 10px 0;  font-size: 50px; color: #fff; font-family: 'OpeSansSemibold'; text-decoration: none; outline: none;}
+
+.medialist_contain  h3{ margin: 0px; padding: 10px 0;  font-size: 50px; color: #f02a2a; font-family: 'OpeSansSemibold'; text-decoration: none; outline: none;}
+
+.medialist_contain  h3 a{color: #00b4ff;}
+.sponsorlogo_block{ text-align: center;}
+.sponsorlogo_block img{ width: auto;  max-width: 100%; display: inline-block;}
+
+.medialist_con2{ background: url("../imgs/mb_bg2.png") no-repeat center top; background-size: 100%; width: 100%; padding-top: 60%}
+
+.medialist_con2_block{ display: block; position: relative; width: 90%; margin: 15px auto;   border: solid 1px #1d1c1c;   border-radius: 5px;}
+
+.auduio_deadline_banner{ width: 100%; border: solid 15px #080808; border-radius: 5px;}
+
+
+
+.medialist_con2_blocklink{   display: block;   background: rgba(0, 0, 0, 0.5); clear: both;  overflow: hidden;  position: absolute; width: 100%; left: 0; bottom: 16px;}
+
+.medialist_con2_blocklink_wrapper{ padding: 10px 30px;}
+
+.medialist_con2_blocklink a{ display: inline-block; float: left;  margin: 5px 3px;}
+.medialist_con2_blocklink img { width: auto;  max-width: 50px;   }
+
+.errortext{ display: block; font-size: 14px; color: #ff0000; padding: 5px 0 10px 0;}
+
+@media screen and (max-width: 767px) {
+    .medialist_con1 button{ width:580px; font-size: 40px; line-height: 45px; }
+    .medialist_contain button{ width:580px; font-size: 40px; line-height: 45px; }
+
+    .medialist_contain p{ font-size: 25px;}
+}
+
+@media screen and (max-width: 600px) {
+
+    .medialist_con1 button{ width: 480px; font-size: 30px; line-height: 35px; }
+    .medialist_contain button{ width: 480px; font-size: 30px; line-height: 35px; }
+
+}
+
+
+@media screen and (max-width: 500px) {
+
+    .medialist_con1 button{ width: 90%; }
+    .medialist_contain button{ width: 90%; }
+
+    .medialist_contain h2{  font-size: 40px; }
+    .medialist_contain  a{  font-size: 30px; }
+    .medialist_contain  h3{  font-size: 30px; }
+
+}

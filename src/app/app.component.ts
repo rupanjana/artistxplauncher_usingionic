@@ -5,21 +5,22 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Deeplinks } from '@ionic-native/deeplinks';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Instagram } from '@ionic-native/instagram';
-
+import { Storage } from '@ionic/storage';
 import { HomePage } from '../pages/home/home';
 import { ShareinstagramPage } from '../pages/shareinstagram/shareinstagram';
 @Component({
     templateUrl: 'app.html'
 })
 export class MyApp {
-    rootPage:any ;
+    rootPage:any=HomePage ;
     @ViewChild(Nav) navChild:Nav;
-    constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,private deeplinks: Deeplinks,private iab: InAppBrowser,private instagram: Instagram) {
+    constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,private deeplinks: Deeplinks,private iab: InAppBrowser,private instagram: Instagram,private storage: Storage) {
         platform.ready().then(() => {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
             statusBar.styleDefault();
             splashScreen.hide();
+            this.storage.set('isinsta',null);
 
 
             this.deeplinks.routeWithNavController(this.navChild, {
@@ -31,10 +32,11 @@ export class MyApp {
                 // match.$link - the full link data
                 console.log('Successfully matched route', match);
                 //alert('Successfully matched route'+ match.$route);
-                alert('Successfully matched route args'+ match.$args.url);
+                //alert('Successfully matched route args'+ match.$args.url);
                 //alert('Successfully matched route'+ match.$link);
                 if(match.$args.url!=null){
-                    this.rootPage = HomePage;
+                    this.storage.set('isinsta',true);
+                    //this.rootPage = HomePage;
                     //this.navChild.push(ShareinstagramPage);
                    // alert('Successfully matched route args'+ match.$args.url);
 
@@ -62,9 +64,10 @@ export class MyApp {
 
                 }
             }, nomatch => {
-                this.rootPage=ShareinstagramPage;
+                this.storage.set('isinsta',false);
+                /*this.rootPage=ShareinstagramPage;
                 // nomatch.$link - the full link data
-                this.iab.create('https://development.artistxp.com/','_system');
+                this.iab.create('https://development.artistxp.com/','_system');*/
                 console.error('Got a deeplink that didn\'t match', nomatch);
             });
 
