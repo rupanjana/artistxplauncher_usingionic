@@ -35,7 +35,7 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
   loginsubmit(){
-      alert(65);
+      // alert(65);
       const httpOptions = {
           headers: new HttpHeaders({
               'Content-Type':  'application/json'
@@ -57,11 +57,13 @@ export class LoginPage {
                   this.servererror=dataval.msg;
               }
               if(dataval.status=='success'){
-                  // alert('Login suceess!');
+                   //alert('Login suceess!');
                   this.storage.set('userid',dataval.msg._id);
                   this.storage.set('useremail',dataval.msg.email);
                   this.storage.set('firstname',dataval.msg.firstname);
                   this.storage.set('lastname',dataval.msg.lastname);
+                  this.storage.set('sponcerurl',dataval.msg.sponserurl);
+                  this.storage.set('sponserimage',dataval.msg.sponserimage);
                   this.navCtrl.push(MedialistPage);
 
               }
@@ -73,15 +75,15 @@ export class LoginPage {
           })
           .catch(error => {
 
-              alert('in native http error');
-              alert(error);
-              console.log(error);
+              // alert('in native http error');
+              // alert(error);
+              // console.log(error);
               if(error == 'cordova_not_available'){
                   console.log('success');
                   this.films = this.httpClient.post('http://developmentapi.audiodeadline.com:3090/loginasuser',this.formdata);
                   this.films
                       .subscribe(data => {
-                          console.log('my data: ', data);
+                          // console.log('my data: ', data);
                           let result:any;
                           result = data;
                           if(result.status=='error'){
@@ -94,6 +96,8 @@ export class LoginPage {
                               this.storage.set('useremail',result.msg.email);
                               this.storage.set('firstname',result.msg.firstname);
                               this.storage.set('lastname',result.msg.lastname);
+                              this.storage.set('sponcerurl',result.msg.sponserurl);
+                              this.storage.set('sponserimage',result.msg.sponserimage);
                               this.navCtrl.push(MedialistPage);
 
                           }

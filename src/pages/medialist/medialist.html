@@ -6,7 +6,11 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>medialist</ion-title>
+    <ion-title>
+      <!--<ion-label color="dark">-->
+      <h4>Media List</h4>
+    <!--</ion-label>-->
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -19,8 +23,8 @@
 
     <div class="medialist_con1_btnwrapper">
 
-  <button>launch artistXP</button>
-  <button>log Out</button>
+  <button (click)="gotomedia()">launch artistXP</button>
+  <button (click)="logout()">log Out</button>
     </div>
   </div>
 
@@ -88,11 +92,10 @@
 
         <div class="medialist_con2_blocklink_wrapper">
         <a (click)="twittershare(item.image)"> <img src="../../assets/imgs/twitter_icon.png" alt="#"   /></a>
-        <a href="javascript:void(0)"> <img src="../../assets/imgs/linkedin_icon.png" alt="#"   /></a>
+        <a (click)="gotoLinkedin(item.image)"> <img src="../../assets/imgs/linkedin_icon.png" alt="#"   /></a>
         <a (click)="facebookShare(item.image)"> <img src="../../assets/imgs/facebook_icon.png" alt="#"   /></a>
-        <a href="javascript:void(0)"> <img src="../../assets/imgs/tumbler_icon.png" alt="#"   /></a>
+        <a (click)="gotoTumblr(item.image)"> <img src="../../assets/imgs/tumbler_icon.png" alt="#"   /></a>
         <a (click)="instashare(item.image)"> <img src="../../assets/imgs/instagram_icon.png" alt="#"   /></a>
-
         </div>
     </div>
     </div>
@@ -104,11 +107,10 @@
 
         <div class="medialist_con2_blocklink_wrapper">
         <a (click)="twittershare(item.image)" > <img src="../../assets/imgs/twitter_icon.png" alt="#"   /></a>
-        <a href="javascript:void(0)"> <img src="../../assets/imgs/linkedin_icon.png" alt="#"   /></a>
+        <a (click)="gotoLinkedin(item.image)"> <img src="../../assets/imgs/linkedin_icon.png" alt="#"   /></a>
         <a (click)="facebookShare(item.image)"> <img src="../../assets/imgs/facebook_icon.png" alt="#"   /></a>
-        <a href="javascript:void(0)"> <img src="../../assets/imgs/tumbler_icon.png" alt="#"   /></a>
+        <a (click)="gotoTumblr(item.image)"> <img src="../../assets/imgs/tumbler_icon.png" alt="#"   /></a>
         <a (click)="instashare(item.image)"> <img src="../../assets/imgs/instagram_icon.png" alt="#"   /></a>
-
         </div>
     </div>
     </div>

@@ -36,24 +36,24 @@ body{ margin:0 ; padding: 0; background-color: #080808;}
 
 /*----------------home------------------*/
 
-.home_body{ background: #080808 url("../imgs/mb_homebg.png") no-repeat center bottom!important; background-size: cover; width: 100vw; height: 100%; position: relative}
+.home_body{ background: #080808 url("../imgs/mb_homebg.png") no-repeat center top!important; background-size: cover!important; width: 100vw; height: 100vh; position: relative}
 
 .home_body ion-content{ padding: 15px;}
 
 
-.homelogo{ display: block; margin: 0 auto; width: 60%; margin-top: 25px;}
+.homelogo{ display: block; margin: 0 auto; width: 60%; margin-top: 30px;  }
 
 
-.home_btmbroup{ padding:0 0 25px 0; position: absolute; left: 0; bottom: 0; display: block; width: 100%;}
+.home_btmbroup{ padding:0 15px 25px 15px;   display: block;  position: absolute; left: 0; bottom: 15px; width: 100%; }
 
-.home_btmbroup button{ display: block; width: 700px; margin: 15px auto; cursor: pointer; border: none; outline: none; box-shadow: none; background: rgba(253,148,0,1);
+.home_btmbroup button{ display: block; width: 460px; margin: 15px auto; cursor: pointer; border: none; outline: none; box-shadow: none; background: rgba(253,148,0,1);
     background: -moz-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
     background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(253,148,0,1)), color-stop(100%, rgba(230,84,0,1)));
     background: -webkit-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
     background: -o-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
     background: -ms-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
     background: linear-gradient(to bottom, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd9400', endColorstr='#e65400', GradientType=0 ); font-family: 'OpeSansSemibold'; font-size: 60px; color: #fff; text-transform: uppercase; text-align: center; border-radius: 10px; padding: 15px 0; line-height: 65px; text-shadow: 1px 1px 2px #fd9100;}
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd9400', endColorstr='#e65400', GradientType=0 ); font-family: 'OpeSansSemibold'; font-size: 35px; color: #fff; text-transform: uppercase; text-align: center; border-radius: 10px; padding: 15px 0; line-height: 40px; text-shadow: 1px 1px 2px #fd9100;}
 
 .home_btmbroup button:hover{background: rgba(40,42,44,1);
     background: -moz-linear-gradient(top, rgba(40,42,44,1) 0%, rgba(38,38,38,1) 100%);
@@ -66,33 +66,200 @@ body{ margin:0 ; padding: 0; background-color: #080808;}
 
 
 
-@media screen and (max-width: 767px) {
-    .home_btmbroup button {
-        width: 580px;
-        font-size: 40px;
-        line-height: 45px;
+/*@media screen and (max-width: 767px) {*/
+    /*.home_btmbroup button {*/
+        /*width: 460px;*/
+        /*font-size: 40px;*/
+        /*line-height: 45px;*/
+    /*}*/
+/*}*/
+
+@media screen and (max-width: 854px) {
+    .home_btmbroup {
+        bottom: -110px;
+    }
+}
+
+@media screen and (max-width: 812px) {
+    .home_btmbroup {
+        bottom: -110px;
+    }
+
+    .homelogo{ display: block; margin: 0 auto; width: 55%; margin-top: 30px;  }
+}
+
+@media screen and (max-width: 800px) {
+    .home_btmbroup {
+        bottom: 15px;
+    }
+
+    .homelogo{ display: block; margin: 0 auto; width: 60%; margin-top: 30px;  }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .home_btmbroup {
+        bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .home_btmbroup {
+        bottom: -110px;
+    }
+}
+
+@media screen and (max-width: 735px) {
+    .home_btmbroup {
+        bottom: 15px;
+    }
+}
+
+
+@media screen and (max-width: 732px) {
+    .home_btmbroup {
+        bottom: -110px;
+    }
+}
+
+
+@media screen and (max-width: 640px) {
+    .home_btmbroup {
+        bottom: -110px;
     }
 }
 
 @media screen and (max-width: 600px) {
+    .home_btmbroup {
+        bottom: 15px;
+    }
+}
 
-    .home_btmbroup button{font-size: 30px; line-height: 35px; width: 480px;}
+@media screen and (max-width: 568px) {
+    .home_btmbroup {
+        bottom: -110px;
+    }
+}
 
-    .homelogo{ width: auto; max-width: 480px;}
+
+@media screen and (max-width: 567px) {
+    .home_btmbroup {
+        bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 533px) {
+    .home_btmbroup {
+        bottom: -110px;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .home_btmbroup {
+        bottom: 15px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .home_btmbroup {
+        bottom: -110px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .home_btmbroup {
+        bottom: 15px;
+    }
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+    .home_btmbroup button{font-size: 30px; line-height: 35px; width: 460px;}
+
+
 }
 
 @media screen and (max-width: 500px) {
 
-    .home_btmbroup button{ width: 90%;  }
+    .home_btmbroup button{ width: 380px;  font-size: 30px;
+        line-height: 35px;}
 
-    .homelogo{ width: auto; max-width: 90%;}
+    .homelogo{ width: auto; max-width: 70%;}
 
 }
+
+@media screen and (max-width: 400px) {
+
+    .home_btmbroup button{ width: 90%;  font-size: 25px;
+        line-height: 30px;}
+
+
+}
+/*
+
+@media screen and (max-width: 1024px) {
+    .home_btmbroup{    margin-top: 710px;  }
+}
+
+
+@media screen and (max-width: 800px) {
+    .home_btmbroup{    margin-top: 730px;}
+}
+
+
+@media screen and (max-width: 768px) {
+    .home_btmbroup{    margin-top: 500px;}
+}
+
+
+@media screen and (max-width: 600px) {
+    .home_btmbroup{     margin-top: 440px;}
+}
+
+
+@media screen and (max-width: 480px) {
+    .home_btmbroup{    margin-top: 370px;}
+}
+
+@media screen and (max-width: 414px) {
+    .home_btmbroup{     margin-top: 300px;}
+}
+
+
+@media screen and (max-width: 412px) {
+    .home_btmbroup{     margin-top: 300px;}
+}
+
+
+
+@media screen and (max-width: 384px) {
+    .home_btmbroup{     margin-top: 230px;}
+}
+
+@media screen and (max-width: 375px) {
+    .home_btmbroup{     margin-top: 260px;}
+}
+
+@media screen and (max-width: 320px) {
+    .home_btmbroup{   margin-top: 160px;}
+}
+
+
+@media screen and (max-height: 320px) {
+    .home_btmbroup{   margin-top: 160px;}
+}
+
+*/
+
 
 
 /*----------------login------------------*/
 
-.login_body{ background: #101629 url("../imgs/mb_login_bg.jpg") no-repeat center top; background-size: cover; width: 100vw; height: 100vh; position: relative;     margin: 0px; overflow: scroll; height: 100%;  }
+.login_body{ background: #101629 url("../imgs/login_img1.png") no-repeat center top; background-size: cover; width: 100vw; height: 100vh; position: relative;     margin: 0px; overflow: scroll; height: 100%;  }
 
 
 .loginlogo{ width: auto; max-width: 90%; display:block; margin: 0 auto; margin-top: 80px;   }
@@ -102,7 +269,9 @@ body{ margin:0 ; padding: 0; background-color: #080808;}
 .login_body .fixed-content{  position: inherit; overflow: inherit;}
 
 
-.login_form_input_body{padding:0 0 30px 0; position: absolute; left: 0; bottom: 0; display: block; width: 100%; z-index: 99;}
+.login_form_input_body{padding:0 15px 30px 15px; display: block; margin-top: -20%;  }
+
+.loginimg2{ display: block; width: 100%; }
 
 
 .logininputdiv_wrapper{ width: 520px; display: block; padding:8px 16px; background: rgba(0, 0, 0, 0.5); border-radius: 10px; margin: 0 auto;}
@@ -128,7 +297,7 @@ body{ margin:0 ; padding: 0; background-color: #080808;}
     background: -o-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
     background: -ms-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
     background: linear-gradient(to bottom, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd9400', endColorstr='#e65400', GradientType=0 ); font-family: 'OpeSansSemibold'; font-size: 60px; color: #fff; text-transform: uppercase; text-align: center; border-radius: 10px; padding: 15px 0; line-height: 65px; text-shadow: 1px 1px 2px #fd9100; margin-top: 30px;}
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd9400', endColorstr='#e65400', GradientType=0 ); font-family: 'OpeSansSemibold'; font-size: 35px; color: #fff; text-transform: uppercase; text-align: center; border-radius: 10px; padding: 15px 0; line-height: 40px; text-shadow: 1px 1px 2px #fd9100; margin-top: 30px;}
 
 @media screen and (max-width: 980px) {
     .loginlogo{ width: auto; max-width: 80%; display:block; margin: 0 auto; margin-top: 22%;   }
@@ -170,14 +339,14 @@ body{ margin:0 ; padding: 0; background-color: #080808;}
 .medialistlogo{ width: auto; max-width: 90%; display:block; margin: 0 auto; margin-top: 120px;   }
 
 
-.medialist_con1 button{ display: block; width: 700px; margin: 15px auto; cursor: pointer; border: none; outline: none; box-shadow: none; background: rgba(253,148,0,1);
+.medialist_con1 button{ display: block; width: 520px; margin: 15px auto; cursor: pointer; border: none; outline: none; box-shadow: none; background: rgba(253,148,0,1);
     background: -moz-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
     background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(253,148,0,1)), color-stop(100%, rgba(230,84,0,1)));
     background: -webkit-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
     background: -o-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
     background: -ms-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
     background: linear-gradient(to bottom, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd9400', endColorstr='#e65400', GradientType=0 ); font-family: 'OpeSansSemibold'; font-size: 60px; color: #fff; text-transform: uppercase; text-align: center; border-radius: 10px; padding: 15px 0; line-height: 65px; text-shadow: 1px 1px 2px #fd9100;}
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd9400', endColorstr='#e65400', GradientType=0 ); font-family: 'OpeSansSemibold'; font-size: 35px; color: #fff; text-transform: uppercase; text-align: center; border-radius: 10px; padding: 15px 0; line-height: 40px; text-shadow: 1px 1px 2px #fd9100;}
 
 .medialist_con1 button:hover{background: rgba(40,42,44,1);
     background: -moz-linear-gradient(top, rgba(40,42,44,1) 0%, rgba(38,38,38,1) 100%);
@@ -195,22 +364,22 @@ body{ margin:0 ; padding: 0; background-color: #080808;}
 
 .medialist_contain2{ border: none; margin-bottom: 0px; padding-bottom: 0px;}
 
-.medialist_contain h2{ margin: 0px; padding: 10px 0; text-transform: uppercase; font-size: 60px; color: #fff; font-family: 'OpeSansSemibold';}
+.medialist_contain h2{ margin: 0px; padding: 10px 15px; text-transform: uppercase; font-size: 40px; color: #fff; font-family: 'OpeSansSemibold';}
 
-.medialist_contain p{margin: 0px; padding: 10px 0;  font-size: 36px; color: #a7a6a6; font-family: 'OpenSansRegu';}
+.medialist_contain p{margin: 0px; padding: 10px 15px;  font-size: 26px; line-height: 32px; color: #a7a6a6; font-family: 'OpenSansRegu';}
 
 .medialist_contain h2 span{ color: #f98700;}
 
 
 
-.medialist_contain button{ display: block; width: 700px; margin: 15px auto; margin-top: 20px; cursor: pointer; border: none; outline: none; box-shadow: none; background: rgba(253,148,0,1);
+.medialist_contain button{ display: block; width: 520px; margin: 15px auto; margin-top: 20px; cursor: pointer; border: none; outline: none; box-shadow: none; background: rgba(253,148,0,1);
     background: -moz-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
     background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(253,148,0,1)), color-stop(100%, rgba(230,84,0,1)));
     background: -webkit-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
     background: -o-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
     background: -ms-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
     background: linear-gradient(to bottom, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd9400', endColorstr='#e65400', GradientType=0 ); font-family: 'OpeSansSemibold'; font-size: 60px; color: #fff; text-transform: uppercase; text-align: center; border-radius: 10px; padding: 15px 0; line-height: 65px; text-shadow: 1px 1px 2px #fd9100;}
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd9400', endColorstr='#e65400', GradientType=0 ); font-family: 'OpeSansSemibold'; font-size: 30px; color: #fff; text-transform: uppercase; text-align: center; border-radius: 10px; padding: 15px 0; line-height: 35px; text-shadow: 1px 1px 2px #fd9100;}
 
 .medialist_contain button:hover{background: rgba(40,42,44,1);
     background: -moz-linear-gradient(top, rgba(40,42,44,1) 0%, rgba(38,38,38,1) 100%);
@@ -222,13 +391,20 @@ body{ margin:0 ; padding: 0; background-color: #080808;}
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#282a2c', endColorstr='#262626', GradientType=0 ); color: #93979a; text-shadow: none;}
 
 
-.medialist_contain  a{ margin: 0px; padding: 10px 0;  font-size: 50px; color: #fff; font-family: 'OpeSansSemibold'; text-decoration: none; outline: none;}
+.medialist_contain  a{ margin: 0px; padding: 10px 15px;  font-size: 40px; color: #fff; font-family: 'OpeSansSemibold'; text-decoration: none; outline: none;}
 
-.medialist_contain  h3{ margin: 0px; padding: 10px 0;  font-size: 50px; color: #f02a2a; font-family: 'OpeSansSemibold'; text-decoration: none; outline: none;}
+.medialist_contain  h3{ margin: 0px; padding: 10px 15px;  font-size: 40px; color: #f02a2a; font-family: 'OpeSansSemibold'; text-decoration: none; outline: none;}
 
 .medialist_contain  h3 a{color: #00b4ff;}
 .sponsorlogo_block{ text-align: center;}
-.sponsorlogo_block img{ width: auto;  max-width: 100%; display: inline-block;}
+.sponsorlogo_block img {
+    width: auto;
+    max-width: 90%;
+    display: block;
+    border: solid 1px #ccc;
+    padding: 4px;
+    margin: 0 auto;
+}
 
 .medialist_con2{ background: url("../imgs/mb_bg2.png") no-repeat center top; background-size: 100%; width: 100%; padding-top: 60%}
 
@@ -238,26 +414,49 @@ body{ margin:0 ; padding: 0; background-color: #080808;}
 
 
 
-.medialist_con2_blocklink{   display: block;   background: rgba(0, 0, 0, 0.5); clear: both;  overflow: hidden;  position: absolute; width: 100%; left: 0; bottom: 16px;}
+.medialist_con2_blocklink{   display: block;   background: #000; clear: both;  overflow: hidden;  width: 100%; border: solid 1px #1d1c1c; }
 
-.medialist_con2_blocklink_wrapper{ padding: 10px 30px;}
+.medialist_con2_blocklink_wrapper{ padding: 5px 15px; clear: both; overflow: hidden;}
 
 .medialist_con2_blocklink a{ display: inline-block; float: left;  margin: 5px 3px;}
 .medialist_con2_blocklink img { width: auto;  max-width: 50px;   }
 
 .errortext{ display: block; font-size: 14px; color: #ff0000; padding: 5px 0 10px 0;}
 
+
+.toolbar-background{background: rgba(253,148,0,1);
+    background: -moz-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%)!important;
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(253,148,0,1)), color-stop(100%, rgba(230,84,0,1)))!important;
+    background: -webkit-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%)!important;
+    background: -o-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%)!important;
+    background: -ms-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%)!important;
+    background: linear-gradient(to bottom, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd9400', endColorstr='#e65400', GradientType=0 )!important;   border-radius: 0px; text-align: center;}
+
+.toolbar-title-md h4{ text-align: center; font-family: 'OpenSansBold'; font-size: 35px; color: #ffffff; text-transform: uppercase; margin: 0px; padding-right: 50px; }
+
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+    color: #fff;
+}
+
+/*
 @media screen and (max-width: 767px) {
     .medialist_con1 button{ width:580px; font-size: 40px; line-height: 45px; }
     .medialist_contain button{ width:580px; font-size: 40px; line-height: 45px; }
 
     .medialist_contain p{ font-size: 25px;}
 }
+*/
 
 @media screen and (max-width: 600px) {
 
     .medialist_con1 button{ width: 480px; font-size: 30px; line-height: 35px; }
     .medialist_contain button{ width: 480px; font-size: 30px; line-height: 35px; }
+
+    .medialist_con2_blocklink img {
+        width: auto;
+        max-width: 30px;
+    }
 
 }
 
@@ -268,7 +467,7 @@ body{ margin:0 ; padding: 0; background-color: #080808;}
     .medialist_contain button{ width: 90%; }
 
     .medialist_contain h2{  font-size: 40px; }
-    .medialist_contain  a{  font-size: 30px; }
-    .medialist_contain  h3{  font-size: 30px; }
+    .medialist_contain  a{  font-size: 26px; }
+    .medialist_contain  h3{  font-size: 26px; }
 
 }
