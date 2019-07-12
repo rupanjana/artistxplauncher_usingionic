@@ -257,12 +257,22 @@ body{ margin:0 ; padding: 0; background-color: #080808;}
 
 
 
+
+.toolbar-content h4{margin: 0px; padding: 4px 15px; text-transform: uppercase; font-size: 30px; color: #fff; font-family: 'OpeSansSemibold';}
+
+.back-button {color: #fff; font-family: 'OpeSansSemibold';}
+
+.bar-button {color: #fff; font-family: 'OpeSansSemibold';}
+
 /*----------------login------------------*/
+
+.login_formbody{ margin-top: 4%;}
+
 
 .login_body{ background: #101629 url("../imgs/login_img1.png") no-repeat center top; background-size: cover; width: 100vw; height: 100vh; position: relative;     margin: 0px; overflow: scroll; height: 100%;  }
 
 
-.loginlogo{ width: auto; max-width: 90%; display:block; margin: 0 auto; margin-top: 80px;   }
+.loginlogo{ width: auto; max-width: 90%; display:block; margin: 0 auto; margin-top: 100px;   }
 
 
 .login_body .scroll-content{  position: inherit; overflow: inherit;}
@@ -271,7 +281,7 @@ body{ margin:0 ; padding: 0; background-color: #080808;}
 
 .login_form_input_body{padding:0 15px 30px 15px; display: block; margin-top: -20%;  }
 
-.loginimg2{ display: block; width: 100%; }
+.loginimg2{ display: block; width: 100%; margin-top: -5px; }
 
 
 .logininputdiv_wrapper{ width: 520px; display: block; padding:8px 16px; background: rgba(0, 0, 0, 0.5); border-radius: 10px; margin: 0 auto;}
@@ -299,8 +309,69 @@ body{ margin:0 ; padding: 0; background-color: #080808;}
     background: linear-gradient(to bottom, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd9400', endColorstr='#e65400', GradientType=0 ); font-family: 'OpeSansSemibold'; font-size: 35px; color: #fff; text-transform: uppercase; text-align: center; border-radius: 10px; padding: 15px 0; line-height: 40px; text-shadow: 1px 1px 2px #fd9100; margin-top: 30px;}
 
+
+
+@media screen and (max-width: 1280px) {
+    .loginlogo{ width: auto; max-width: 80%; display:block; margin: 0 auto; margin-top: 10%;   }
+}
+
 @media screen and (max-width: 980px) {
-    .loginlogo{ width: auto; max-width: 80%; display:block; margin: 0 auto; margin-top: 22%;   }
+    .loginlogo{ width: auto; max-width: 80%; display:block; margin: 0 auto; margin-top: 25%;   }
+}
+
+@media screen and (max-width: 960px) {
+    .loginlogo{  margin-top: 12%;   }
+}
+
+@media screen and (max-width: 800px) {
+    .loginlogo{  margin-top: 16%;   }
+}
+
+@media screen and (max-width: 736px) {
+    .loginlogo{  margin-top: 12%;   }
+}
+
+@media screen and (max-width: 732px) {
+    .loginlogo{  margin-top: 14%;   }
+}
+
+@media screen and (max-width: 640px) {
+    .loginlogo{  margin-top: 16%;   }
+}
+
+@media screen and (max-width: 600px) {
+    .loginlogo{  margin-top: 16%;   }
+}
+
+
+@media screen and (max-width: 568px) {
+    .loginlogo{  margin-top: 15%;   }
+}
+
+@media screen and (max-width: 480px) {
+    .loginlogo{  margin-top: 20%;   }
+}
+
+@media screen and (max-width:414px) {
+    .loginlogo{  margin-top: 22%;   }
+}
+
+@media screen and (max-width:412px) {
+    .loginlogo{  margin-top: 20%;   }
+}
+
+@media screen and (max-width:411px) {
+    .loginlogo{  margin-top: 22%;   }
+}
+
+
+@media screen and (max-width: 384px) {
+    .loginlogo{  margin-top: 24%;   }
+}
+
+
+@media screen and (max-width: 360px) {
+    .loginlogo{  margin-top: 25%;   }
 }
 
 
@@ -336,7 +407,7 @@ body{ margin:0 ; padding: 0; background-color: #080808;}
 .medialist_body .fixed-content{  position: inherit; overflow: inherit; display: none;}
 
 
-.medialistlogo{ width: auto; max-width: 90%; display:block; margin: 0 auto; margin-top: 120px;   }
+.medialistlogo{ width: auto; max-width: 90%; display:block; margin: 0 auto; margin-top: 45px;   }
 
 
 .medialist_con1 button{ display: block; width: 520px; margin: 15px auto; cursor: pointer; border: none; outline: none; box-shadow: none; background: rgba(253,148,0,1);
@@ -471,3 +542,28 @@ body{ margin:0 ; padding: 0; background-color: #080808;}
     .medialist_contain  h3{  font-size: 26px; }
 
 }
+
+
+
+
+.scrolltop{ position: fixed; right: 5px; bottom: -1px; width: 45px;}
+
+
+.medialist_body .fab-md{background: rgba(253,148,0,1);
+    background: -moz-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%)!important;
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(253,148,0,1)), color-stop(100%, rgba(230,84,0,1)))!important;
+    background: -webkit-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%)!important;
+    background: -o-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%)!important;
+    background: -ms-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%)!important;
+    background: linear-gradient(to bottom, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd9400', endColorstr='#e65400', GradientType=0 )!important; }
+
+
+.medialist_body  .fab-ios {background: rgba(253,148,0,1);
+    background: -moz-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%)!important;
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(253,148,0,1)), color-stop(100%, rgba(230,84,0,1)))!important;
+    background: -webkit-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%)!important;
+    background: -o-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%)!important;
+    background: -ms-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%)!important;
+    background: linear-gradient(to bottom, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd9400', endColorstr='#e65400', GradientType=0 )!important; }

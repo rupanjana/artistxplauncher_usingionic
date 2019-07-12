@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 // import {HttpHeaders} from "@angular/common/http";
 import { Storage } from '@ionic/storage';
-import {InAppBrowser} from '@ionic-native/in-app-browser'
+import {InAppBrowser} from '@ionic-native/in-app-browser';
+import { Content } from 'ionic-angular';
 
 /*for sharing images in social media*/
 import { SocialSharing } from '@ionic-native/social-sharing';
@@ -36,6 +37,8 @@ export class MedialistPage {
   public artistxpSignBannerList: any;
   public blastorpassBannerList: any;
   public servererror:any;
+   // @ViewChild(IonContent) content: IonContent;
+    @ViewChild(Content) pageTop: Content;
 
       constructor(public navCtrl: NavController, public navParams: NavParams , public httpclient :HttpClient,public storage: Storage,private socialSharing: SocialSharing, public http:HTTP,public inappbrowser:InAppBrowser) {
     /*console.log('this.storage.get');
@@ -49,7 +52,7 @@ export class MedialistPage {
           this.getartistxpSignBanner();
           this.getBlastorpassBanner();
 
-      },3000);
+      },1000);
       /*setTimeout(()=>{
           this.getBlastorpassBanner();
       },2000);*/
@@ -385,7 +388,7 @@ export class MedialistPage {
     }
     twittershare(image){
         //alert('http://devshare.artistxp.com/sharetool2.php?media_id='+image+'&username='+this.username+'&image='+image+'&submittype=signup');
-        this.socialSharing.shareViaTwitter('test',null, 'http://devshare.artistxp.com/sharetool2.php?media_id='+image+'&username='+this.username+'&image='+image+'&submittype=signup');
+        this.socialSharing.shareViaTwitter('',null, 'http://devshare.artistxp.com/sharetool2.php?media_id='+image+'&username='+this.username+'&image='+image+'&submittype=signup');
         /*this.socialSharing.shareViaTwitter('test','https://developmentapi.audiodeadline.com/nodeserver/uploads/banner/'+image).then(()=>{
             alert('in insta call');
             alert('https://developmentapi.audiodeadline.com/nodeserver/uploads/banner/'+image);
@@ -395,7 +398,7 @@ export class MedialistPage {
     }
     facebookShare(image){
        // alert('https://developmentapi.audiodeadline.com/nodeserver/uploads/banner/'+image);
-        this.socialSharing.shareViaFacebook('test', 'https://developmentapi.audiodeadline.com/nodeserver/uploads/banner/'+image, 'http://devshare.artistxp.com/sharetool2.php?media_id='+image+'&username='+this.username+'&image='+image+'&submittype=signup');
+        this.socialSharing.shareViaFacebook('','','http://devshare.artistxp.com/sharetool2.php?media_id='+image+'&username='+this.username+'&image='+image+'&submittype=signup');
     }
 
   ionViewDidLoad() {
@@ -423,6 +426,20 @@ export class MedialistPage {
       });
 
   }
+
+    public pageScroller(){
+        //scroll to page top
+        //this.content.scrollToTop(100);
+        //alert(this.pageTop.contentHeight);
+        console.log(this.pageTop.contentHeight);
+        //alert(4);
+        //this.pageTop.scrollTo(0,200,1);
+        let element = document.getElementById('ionc');
+        element.scrollIntoView();
+        //console.log(element.length);
+        //this.pageTop.scrollToTop(1000);
+        //this.pageTop.scrollToBottom(100);
+    }
 
 
 }
