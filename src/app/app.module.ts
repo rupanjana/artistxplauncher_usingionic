@@ -13,9 +13,13 @@ import { HomePage } from '../pages/home/home';
 import { ShareinstagramPage } from '../pages/shareinstagram/shareinstagram';
 import { LoginPage } from '../pages/login/login';
 import { MedialistPage } from '../pages/medialist/medialist';
+import { MediawallPage } from '../pages/mediawall/mediawall';
+import { TermsPage } from '../pages/terms/terms';
+import { SearchPage } from '../pages/search/search';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http';
 import { HTTP } from '@ionic-native/http';
+import { Clipboard } from '@ionic-native/clipboard';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,7 @@ import { HTTP } from '@ionic-native/http';
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,7 +41,7 @@ import { HTTP } from '@ionic-native/http';
   ],
   providers: [
     StatusBar,
-    SplashScreen,InAppBrowser,Deeplinks,Instagram,SocialSharing,HTTP,
+    SplashScreen,InAppBrowser,Deeplinks,Instagram,SocialSharing,HTTP,Clipboard,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

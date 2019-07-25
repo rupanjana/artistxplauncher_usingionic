@@ -4,7 +4,7 @@ import { MedialistPage } from './medialist';
 
 @NgModule({
   declarations: [
-    // MedialistPage,
+     //MedialistPage,
   ],
   imports: [
     IonicPageModule.forChild(MedialistPage),

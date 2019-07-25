@@ -1,0 +1,171 @@
+<!--
+  Generated template for the MedialistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header #pageTop id="testitem">
+  <ion-navbar>
+
+    <ion-title>
+
+      <!--<ion-label color="dark">-->
+      <h4>Media List</h4>
+
+      <!--</ion-label>-->
+    </ion-title>
+    <button ion-button menuToggle slot="right" class="ionbuttonrightmenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <!--<ion-menu side="end" id="menuid">
+    &lt;!&ndash;<ion-header>
+      <ion-toolbar translucent>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>&ndash;&gt;
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <ion-icon name="home" slot="start"></ion-icon>
+          <ion-label>Home</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="person" slot="start"></ion-icon>
+          <ion-label>Profile</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="chatbubbles" slot="start"></ion-icon>
+          <ion-label>Messages</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="settings" slot="start"></ion-icon>
+          <ion-label>Settings</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+    </ion-menu>-->
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-card class="medialist_body" >
+
+    <div class="medialist_con1" id="ionc">
+
+      <img src="../../assets/imgs/mb_logo.png" alt="#" class="medialistlogo" />
+
+      <div class="medialist_con1_btnwrapper">
+
+        <button (click)="gotomedia()">launch artistXP</button>
+        <button (click)="logout()">log Out</button>
+      </div>
+    </div>
+
+    <div class="medialist_contain">
+      <h2>SOCIAL MEDIA BANNERS</h2>
+      <p>Share these banners with your followers and friends to start promoting now! Anyone that signs up under you as an artist or a fan of an artist that purchases anything from ArtistXP and AudioDeadline, whether that be a ticket for the show or some sick merch, you get a commission. Know someone with some powerful
+        persuasion skills? Have them join as an affiliate and earn a commission from their follower's purchases. </p>
+
+    </div>
+
+    <div class="medialist_contain" *ngIf="sponserflag==1">
+      <h2>MANAGE SPONSOR
+        LOGOS & URL</h2>
+      <p>Upload a logo and add your URL to your website to show all of your shares are sponsored by you! </p>
+
+    </div>
+
+    <div class="medialist_contain" *ngIf="sponserflag==1">
+      <h2><span> SPONSOR LOGOS</span></h2>
+      <div class="sponsorlogo_block"><img src="https://developmentapi.audiodeadline.com/nodeserver/uploads/{{sponserimage}}"></div>
+      <!--<button>update</button>-->
+    </div>
+
+    <div class="medialist_contain" *ngIf="sponserflag==1">
+      <h2><span> SPONSOR URL</span></h2>
+      <a href="javascript:void(0)">{{sponserurl}}</a>
+      <!--<button>update</button>-->
+    </div>
+
+    <div class="medialist_contain medialist_contain2">
+      <!--<h2>MANAGE SPONSOR LOGOS & URL</h2>-->
+      <h3>URL: <a href="javascript:void(0)"> https://development.
+        audiodeadline.com/
+        {{username}}  </a></h3>
+
+
+      <button (click)="copyurl('https://development.audiodeadline.com/'+username)">GRAB URL</button>
+    </div>
+
+
+    <div class="medialist_con2">
+
+
+      <!--<div class="medialist_con2_block" *ngFor="let item of ticketBannerList">
+
+        <img src="../../assets/imgs/auduio_deadline_banner.jpg" alt="#" class="auduio_deadline_banner" />
+
+        <div class="medialist_con2_blocklink">
+
+          <div class="medialist_con2_blocklink_wrapper">
+          <a href="javascript:void(0)"> <img src="../../assets/imgs/twitter_icon.png" alt="#"   /></a>
+          <a href="javascript:void(0)"> <img src="../../assets/imgs/linkedin_icon.png" alt="#"   /></a>
+          <a href="javascript:void(0)"> <img src="../../assets/imgs/facebook_icon.png" alt="#"   /></a>
+          <a href="javascript:void(0)"> <img src="../../assets/imgs/tumbler_icon.png" alt="#"   /></a>
+
+          </div>
+      </div>
+      </div>-->
+      <div class="medialist_con2_block" *ngFor="let item of artistxpSignBannerList ">
+
+        <img src="https://developmentapi.audiodeadline.com/nodeserver/uploads/banner/{{item.image}}" alt="#" class="auduio_deadline_banner" />
+
+        <div class="medialist_con2_blocklink">
+
+          <div class="medialist_con2_blocklink_wrapper">
+            <a (click)="twittersharenewwithcatchblok(item.image)"> <img src="../../assets/imgs/twitter_icon.png" alt="#"   /></a>
+            <a (click)="gotoLinkedin(item.image)"> <img src="../../assets/imgs/linkedin_icon.png" alt="#"   /></a>
+            <!-- <a (click)="facebookShare(item.image)"> <img src="../../assets/imgs/facebook_icon.png" alt="#"   /></a>-->
+            <a (click)="facebooksharewithcatchblock(item.image)"> <img src="../../assets/imgs/facebook_icon.png" alt="#"   /></a>
+            <a (click)="gotoTumblr(item.image)"> <img src="../../assets/imgs/tumbler_icon.png" alt="#"   /></a>
+            <a (click)="instagramshare(item.image)"> <img src="../../assets/imgs/instagram_icon.png" alt="#"   /></a>
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="medialist_con2_block" *ngFor="let item of blastorpassBannerList">
+
+        <img src="https://developmentapi.audiodeadline.com/nodeserver/uploads/banner/{{item.image}}" alt="#" class="auduio_deadline_banner" />
+
+        <div class="medialist_con2_blocklink">
+
+          <div class="medialist_con2_blocklink_wrapper">
+            <a (click)="twittersharenewwithcatchblok(item.image)" > <img src="../../assets/imgs/twitter_icon.png" alt="#"   /></a>
+            <a (click)="gotoLinkedin(item.image)"> <img src="../../assets/imgs/linkedin_icon.png" alt="#"   /></a>
+            <!--<a (click)="facebookShare(item.image)"> <img src="../../assets/imgs/facebook_icon.png" alt="#"   /></a>-->
+            <a (click)="facebooksharewithcatchblock(item.image)"> <img src="../../assets/imgs/facebook_icon.png" alt="#"   /></a>
+            <a (click)="gotoTumblr(item.image)"> <img src="../../assets/imgs/tumbler_icon.png" alt="#"   /></a>
+            <a (click)="instashare(item.image)"> <img src="../../assets/imgs/instagram_icon.png" alt="#"   /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--<img src="../../assets/imgs/scrolltop.png" alt="#" class="scrolltop"  (click)="pageScroller()"  />-->
+
+    <ion-fab right bottom>
+      <button ion-fab color="darkroyal" (click)="pageScroller()">
+        <ion-icon name="ios-arrow-up"></ion-icon></button>
+    </ion-fab>
+
+
+  </ion-card>
+</ion-content>

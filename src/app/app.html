@@ -1,1 +1,42 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>
+                MENU
+            </ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+
+            <ion-item *ngFor="let p of pages">
+                <a (click)="gotopage(p)"  *ngIf="p.type==null">
+                    {{p.title}}
+                </a>
+                <a  *ngIf="p.type=='multiple'" (click)="selmenuf(p)">
+                    {{p.title}} <ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon>
+                    <ng-container *ngIf="selmenu==p.title">
+
+
+                        <ion-row *ngFor="let p1 of p.submenu">
+                            <a (click)="gotopage(p1)"  *ngIf="p1.type==null">
+                                {{p1.title}}
+                            </a>
+
+                        </ion-row>
+
+                    </ng-container>
+                </a>
+
+
+            </ion-item>
+
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+
+
+
+
+<ion-nav [root]="rootPage" #content swipeBackEnable="false"></ion-nav>

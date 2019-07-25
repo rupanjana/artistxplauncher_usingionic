@@ -25,6 +25,7 @@ export class LoginPage {
   public showerror:boolean=false;
   public password:any=null;
   public films:any=null;
+  public selmenu:any=null;
   public servererror:any=null;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public httpClient: HttpClient,private storage: Storage,private http: HTTP) {
@@ -64,6 +65,7 @@ export class LoginPage {
                   this.storage.set('lastname',dataval.msg.lastname);
                   this.storage.set('sponcerurl',dataval.msg.sponserurl);
                   this.storage.set('sponserimage',dataval.msg.sponserimage);
+                  this.storage.set('username',dataval.msg.username);
                   this.navCtrl.push(MedialistPage);
 
               }
@@ -98,6 +100,7 @@ export class LoginPage {
                               this.storage.set('lastname',result.msg.lastname);
                               this.storage.set('sponcerurl',result.msg.sponserurl);
                               this.storage.set('sponserimage',result.msg.sponserimage);
+                              this.storage.set('username',result.msg.username);
                               this.navCtrl.push(MedialistPage);
 
                           }

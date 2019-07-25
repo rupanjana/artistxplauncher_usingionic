@@ -5,7 +5,7 @@ import { Instagram } from '@ionic-native/instagram';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { Storage } from '@ionic/storage';
 import {LoginPage} from '../login/login'
-import {MedialistPage} from '../medialist/medialist'
+import {ShareinstagramPage} from '../shareinstagram/shareinstagram';
 @Component({
     selector: 'page-home',
     templateUrl: 'home.html'
@@ -47,6 +47,9 @@ export class HomePage {
     gotologin(){
         this.navCtrl.push(LoginPage);
     }
+   /* gotoshare(){
+        this.navCtrl.push(ShareinstagramPage);
+    }*/
     gotomedia(){
         this.iab.create('https://development.artistxp.com/','_system');
     }

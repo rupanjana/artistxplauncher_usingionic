@@ -64,6 +64,144 @@ body{ margin:0 ; padding: 0; background-color: #080808;}
     background: linear-gradient(to bottom, rgba(40,42,44,1) 0%, rgba(38,38,38,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#282a2c', endColorstr='#262626', GradientType=0 ); color: #93979a; text-shadow: none;}
 
+.tendingartistcol {background-color: #1d1f20; padding: 12px}
+.imagewrappertamain {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border: 9px solid #2a2d2e;
+    position: relative;
+}
+.tendingartistsinglecolleft .imagewrappertamain img {
+    /* max-width: 100%; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    min-height: 100%;
+    min-width: 100%;
+}
+.contentmiddle:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    border-bottom: 1px solid #343738;
+}
+.contentmiddle {
+    border-bottom: 1px solid #0f1011;
+    position: relative;
+    z-index: 10;
+    padding: 7px 0px 1px;
+}
+.contenttop h4 {
+    padding: 0;
+    margin: 0;
+    font-family: "RobotoRegular";
+    color: #bebebe;
+    font-size: 16px;
+    line-height: 20px;
+}
+.tatopheaderform h2 span, .tatopheaderform h2 label span {
+    font-family: "RobotoBold";
+    font-size: 36px;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(#ffffff, #a0a2a3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0;
+    margin: 0px;
+    line-height: 36px;
+    letter-spacing: 0px;
+    text-align: left;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+.col-1-2 {
+    width: 100%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 6px !important;
+    padding-left: 6px !important;
+    word-wrap: break-word;
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 12px;
+    vertical-align: top;
+}
+.btngraygradient, .btngraygradient:hover {
+    padding: 11px;
+    font-family: 'RobotoBold';
+    font-size: 18px;
+    color: #000;
+    text-transform: uppercase;
+    display: inline-block;
+    line-height: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    background: -moz-linear-gradient(90deg, rgba(129,132,133,1) 0%, rgba(206,205,204,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(206,205,204,1)), color-stop(100%, rgba(129,132,133,1)));
+    background: -webkit-linear-gradient(90deg, rgba(129,132,133,1) 0%, rgba(206,205,204,1) 100%);
+    background: -o-linear-gradient(90deg, rgba(129,132,133,1) 0%, rgba(206,205,204,1) 100%);
+    background: -ms-linear-gradient(90deg, rgba(129,132,133,1) 0%, rgba(206,205,204,1) 100%);
+    background: linear-gradient(0deg, rgba(129,132,133,1) 0%, rgba(206,205,204,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cecdcc', endColorstr='#818485',GradientType=0 );
+}
+.sectionheaderinner h2 {
+    display: inline-block;
+}
+.contenttop h2 {
+    padding: 0;
+    margin: 0;
+    font-family: "RobotoRegular";
+    color: #bebebe;
+    font-size: 24px;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
+.contentmiddle h2 {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 9px;
+    font-family: "RobotoMedium";
+    font-size: 18px;
+    color: #e5ff0a;
+    text-transform: uppercase;
+    line-height: 18px;
+    margin-top: 5px;
+}
+.tendingartistsinglecolleft {
+    width: 140px;
+}
+.feedslinks {display: table;width: 100%}
+.feedslinks span {display: table-cell;vertical-align: middle;padding: 4px;color: #fff;font-size: 12px;cursor: pointer; text-align: center; position: relative}
+.feedslinks input.form-control {width: 100%;height: 26px;display: block;border-radius: 100px;background-color: #464b4d;border: 0px !important; color: #bdbdbd}
+.feedslinks .imgwrapper {width: 35px !important; height: 35px !important; border: 0px !important; border-radius: 100px; display: inline-block}
+.feedslinks .imgwrapper img {width: 100%}
+.feedslinks .fa {margin-right: 2px; font-size: 12px}
+.feedslinks .fa-comment {color:#9b1446}
+.feedslinks .fa-share-alt {color:#88a60e}
+.feedslinks .fa-eye {color:#b22b6e}
+.feedslinks .fa-thumbs-up {color:#1880bc}
+.feedslinks .fa-reply {color:#c37623}
+.comment_text_reply .fa-reply {color:#c37623; display: inline-block !important}
+.feedslinks .fa-users {color:#e9328d}
+.feedslinks .fa-music {color:#26a0e5}
+.feedslinks .fa-youtube-play {color:#fc9a2f}
+.feedslinks input.form-control:focus {box-shadow: none}
+.feedslinks .imgwrapper span {padding: 18px !important}
+.feedslinks .feedslinks2 {display: flex; justify-content: space-between; align-items: center}
+.feedslinks .feedslinks2 strong {padding-left: 10px}
 
 
 /*@media screen and (max-width: 767px) {*/
@@ -401,7 +539,7 @@ body{ margin:0 ; padding: 0; background-color: #080808;}
 
 .medialist_body{ background: #080808;    width: 100vw;    display: block; margin: 0px;   overflow: scroll; height: 100%;   }
 
-.medialist_con1{ background: url("../imgs/mb_bg1.png") no-repeat center top; background-size: 100%; width: 100%;}
+.medialist_con1{ background: url("../../assets/imgs/artistxp_homepage_top_img.jpg") no-repeat center top 80px; background-size: 100%; width: 100%;}
 
 .medialist_body .scroll-content{  position: inherit; overflow: inherit; display: none;}
 .medialist_body .fixed-content{  position: inherit; overflow: inherit; display: none;}
@@ -429,7 +567,7 @@ body{ margin:0 ; padding: 0; background-color: #080808;}
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#282a2c', endColorstr='#262626', GradientType=0 ); color: #93979a; text-shadow: none;}
 
 
-.medialist_con1_btnwrapper{ margin-top: 62%;}
+.medialist_con1_btnwrapper{ margin-top: 130%;}
 
 .medialist_contain{ margin: 15px 15px; border-bottom: solid 2px #ddd; text-align: center; padding: 25px 0;  }
 
@@ -567,3 +705,10 @@ body{ margin:0 ; padding: 0; background-color: #080808;}
     background: -ms-linear-gradient(top, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%)!important;
     background: linear-gradient(to bottom, rgba(253,148,0,1) 0%, rgba(230,84,0,1) 100%)!important;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd9400', endColorstr='#e65400', GradientType=0 )!important; }
+
+
+
+
+/*===================================*/
+
+.ionbuttonrightmenu{ display: block!important; position: absolute!important; right: 0!important;}

@@ -5,13 +5,48 @@
   Ionic pages and navigation.
 -->
 <ion-header #pageTop id="testitem">
-  <ion-navbar>
+    <ion-navbar>
+
     <ion-title>
+
       <!--<ion-label color="dark">-->
       <h4>Media List</h4>
+
     <!--</ion-label>-->
     </ion-title>
-  </ion-navbar>
+      <button ion-button menuToggle slot="right" class="ionbuttonrightmenu">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <!--<ion-menu side="end" id="menuid">
+      &lt;!&ndash;<ion-header>
+        <ion-toolbar translucent>
+          <ion-title>Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>&ndash;&gt;
+      <ion-content>
+        <ion-list>
+          <ion-item>
+            <ion-icon name="home" slot="start"></ion-icon>
+            <ion-label>Home</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="person" slot="start"></ion-icon>
+            <ion-label>Profile</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="chatbubbles" slot="start"></ion-icon>
+            <ion-label>Messages</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="settings" slot="start"></ion-icon>
+            <ion-label>Settings</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+      </ion-menu>-->
+
+    </ion-navbar>
+
 </ion-header>
 
 <ion-content>
@@ -56,14 +91,13 @@
   </div>
 
   <div class="medialist_contain medialist_contain2">
-    <!--<h2>MANAGE SPONSOR
-      LOGOS & URL</h2>-->
+    <!--<h2>MANAGE SPONSOR LOGOS & URL</h2>-->
     <h3>URL: <a href="javascript:void(0)"> https://development.
       audiodeadline.com/
       {{username}}  </a></h3>
 
 
-    <button>GRAB URL</button>
+    <button (click)="copyurl('https://development.audiodeadline.com/'+username)">GRAB URL</button>
   </div>
 
 
@@ -92,11 +126,18 @@
       <div class="medialist_con2_blocklink">
 
         <div class="medialist_con2_blocklink_wrapper">
-        <a (click)="twittershare(item.image)"> <img src="../../assets/imgs/twitter_icon.png" alt="#"   /></a>
+        <a (click)="twittersharenewwithcatchblok(item.image)"> <img src="../../assets/imgs/twitter_icon.png" alt="#"   /></a>
         <a (click)="gotoLinkedin(item.image)"> <img src="../../assets/imgs/linkedin_icon.png" alt="#"   /></a>
-        <a (click)="facebookShare(item.image)"> <img src="../../assets/imgs/facebook_icon.png" alt="#"   /></a>
+       <!-- <a (click)="facebookShare(item.image)"> <img src="../../assets/imgs/facebook_icon.png" alt="#"   /></a>-->
+          <a (click)="facebooksharewithcatchblock(item.image)"> <img src="../../assets/imgs/facebook_icon.png" alt="#"   /></a>
         <a (click)="gotoTumblr(item.image)"> <img src="../../assets/imgs/tumbler_icon.png" alt="#"   /></a>
-        <a (click)="instashare(item.image)"> <img src="../../assets/imgs/instagram_icon.png" alt="#"   /></a>
+        <a (click)="instagramshare(item.image)"> <img src="../../assets/imgs/instagram_icon.png" alt="#"   /></a>
+
+
+
+
+
+
         </div>
     </div>
     </div>
@@ -107,9 +148,10 @@
       <div class="medialist_con2_blocklink">
 
         <div class="medialist_con2_blocklink_wrapper">
-        <a (click)="twittershare(item.image)" > <img src="../../assets/imgs/twitter_icon.png" alt="#"   /></a>
+        <a (click)="twittersharenewwithcatchblok(item.image)" > <img src="../../assets/imgs/twitter_icon.png" alt="#"   /></a>
         <a (click)="gotoLinkedin(item.image)"> <img src="../../assets/imgs/linkedin_icon.png" alt="#"   /></a>
-        <a (click)="facebookShare(item.image)"> <img src="../../assets/imgs/facebook_icon.png" alt="#"   /></a>
+        <!--<a (click)="facebookShare(item.image)"> <img src="../../assets/imgs/facebook_icon.png" alt="#"   /></a>-->
+          <a (click)="facebooksharewithcatchblock(item.image)"> <img src="../../assets/imgs/facebook_icon.png" alt="#"   /></a>
         <a (click)="gotoTumblr(item.image)"> <img src="../../assets/imgs/tumbler_icon.png" alt="#"   /></a>
         <a (click)="instashare(item.image)"> <img src="../../assets/imgs/instagram_icon.png" alt="#"   /></a>
         </div>

@@ -1,0 +1,84 @@
+<!--
+  Generated template for the ArtistsearchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>artistsearch</ion-title>
+    <button ion-button menuToggle slot="right" class="ionbuttonrightmenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<div>
+        <span class="tendingartistsinglecolspan" *ngFor="let p of resultofartistdata">
+          <div class="col-1-2 col tendingartistsinglecol">
+            <div class="tendingartistcol">
+              <div class="row no-gutter sectionheaderinner col-container">
+                <div class="col tendingartistsinglecolleft">
+                  <div class="imagewrappertamain">
+                    <a target="_blank" href="/profile">
+                      <img alt="rightbannerdiv screen6" style="cursor: pointer" src="https://s3.amazonaws.com/file.development.audiodeadline.com/pictures/{{p._id}}/{{p.images}}">
+                    </a>
+                    <a target="_blank" href="/profile"></a>
+                  </div>
+                </div>
+                <div class="col tendingartistsinglecolright">
+                  <div class="tendingartistsinglecolrightcontent">
+                    <div class="contenttop" >
+                      <a target="_blank" href="/profile">
+                        <h2>{{p.firstname}}{{p.lastname}}</h2></a>
+                        <h4>{{p.fulladdress}}</h4>
+                    </div>
+                    <div class="contentmiddle ">
+                      <h2 class="gn5">
+                        <label class="greenclrtxt">Genre:</label>
+                        <span *ngFor="let l of p.genredetail">{{l.genredetail[0].genrename}}</span>
+                      </h2>
+                    </div>
+                    <div class="contentmiddle">
+                      <h2>
+                        <label class="greenclrtxt" *ngIf="p.dancer==1">Dancer</label>
+                        <label class="greenclrtxt" *ngIf="p.musicians==1">Musician</label>
+                        <label class="greenclrtxt" *ngIf="p.model==1">Model</label>
+                      </h2>
+                    </div>
+                    <div class="contentbottom">
+                      <div class="feedslinks">
+                        <span class="feedslinks1">
+                          <ion-icon class="fa fa-eye" name="ios-user"></ion-icon>[ 13 ]</span>
+                        <span class="feedslinks1">
+                          <i class="fa fa-eye"></i>
+                        </span>
+                        <span class="feedslinks2"><ion-icon class="fa fa-music" name="ios-music"></ion-icon>[ 31 ]</span>
+                        <span class="feedslinks2"><ion-icon class="fa fa-eye" name="ios-eye"></ion-icon></span>
+                        <span class="feedslinks3"><ion-icon class="fa fa-youtube-play" name="ios-youtube"></ion-icon>[ 90 ]</span>
+                        <span class="feedslinks3"><ion-icon class="fa fa-eye" name="ios-eye"></ion-icon></span>
+                        <span class="feedslinks3"><ion-icon class="fa fa-image" name="ios-image"></ion-icon>[ 141 ]</span>
+                        <span class="feedslinks3"><ion-icon class="fa fa-eye" name="ios-eye"></ion-icon></span>
+                        <div class="asbuttonwrappernew">
+
+                        </div>
+                        <span class="feedslinks4">
+                          <div class="btnviewprofilenew">
+                            <a class="btngraygradient" href="/profile">Back To Profile</a>
+                          </div>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </span>
+
+  </div>
+
+
+</ion-content>
+
