@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import { IonicPage, NavController, NavParams ,MenuController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams ,MenuController,Platform} from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 // import {HttpHeaders} from "@angular/common/http";
 import { Storage } from '@ionic/storage';
@@ -39,17 +39,24 @@ export class MedialistPage {
   public artistxpSignBannerList: any=[];
   public blastorpassBannerList: any=[];
   public servererror:any;
+  public buttonflag:boolean=false;
     public intervalForArtistxpBanner: any;
     public intervalForBlastBanner: any;
     public graburlset:any="https://development.audiodeadline.com/";
     @ViewChild(Content) pageTop: Content;
 
 
-      constructor(public navCtrl: NavController, public navParams: NavParams , public httpclient :HttpClient,public storage: Storage,private socialSharing: SocialSharing, public http:HTTP,public inappbrowser:InAppBrowser,public alertctrl:AlertController,public clipboard:Clipboard,private menuctrl:MenuController) {
-         /* openFirst() {
-              this.menuctrl.enable(true, 'first');
-              this.menuctrl.open('first');
-          }*/
+      constructor(public navCtrl: NavController, public navParams: NavParams , public httpclient :HttpClient,public storage: Storage,private socialSharing: SocialSharing, public http:HTTP,public inappbrowser:InAppBrowser,public alertctrl:AlertController,public clipboard:Clipboard,private menuctrl:MenuController,public platform: Platform) {
+          this.platform.ready().then(() => {
+
+              if (this.platform.is('ios')) {
+                  // This will only print when on iOS
+                  //alert('it is in ios in start block..');
+                  console.log('I am an iOS device in medialist page!');
+                  //this.navctrl.push(LoginPage);
+                  this.buttonflag=true;
+              }
+          });
 
     this.storage.get('userid').then((val) => {
       this.user_id = val;

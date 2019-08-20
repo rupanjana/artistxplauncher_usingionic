@@ -9,12 +9,501 @@
     <button ion-button menuToggle slot="right" class="ionbuttonrightmenu">
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>allmedia</ion-title>
+    <ion-title>All Media</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
+<!--<span *ngFor="let p of resultinparse">
+  <ion-list>
+     <ion-item>
+    {{p.firstname}}{{p.lastname}}</ion-label>
+  </ion-item>
+  </ion-list>
 
-  all media
+   &lt;!&ndash;<img src="https://s3.amazonaws.com/file.development.audiodeadline.com/pictures/p._id/p.posts[0].image_pic">&ndash;&gt;
+
+  &lt;!&ndash;<img src="https://s3.amazonaws.com/file.development.audiodeadline.com/pictures/p_id/{{p.posts.image_pic}}">&ndash;&gt;
+ &lt;!&ndash; <img src="https://s3.amazonaws.com/file.development.audiodeadline.com/pictures/5cb5c8b09503a21b54de794a/large(28)-1563169855.jpg">&ndash;&gt;
+
+</span>-->
+    <div class="signupflow2newblock  astrendingmediatogglebtn">
+<ul class="formdivinnerlist">
+<li class="formdivinnerlistinner">
+    <div>
+        <!--<input name="music" type="checkbox" value="c" [(ngModel)]="theCheckbox1"-->
+        <ion-checkbox [(ngModel)]="theCheckbox1" (ionChange)="filterByMedia()"></ion-checkbox>
+        <label>Music</label>
+    </div>
+</li>
+<li class="formdivinnerlistinner">
+    <div>
+        <ion-checkbox [(ngModel)]="theCheckbox2" (ionChange)="filterByMedia()"></ion-checkbox>
+       <!-- <input name="video" type="checkbox" value="a"  [(ngModel)]="theCheckbox2"(click)="filterByMedia()" >-->
+        <label>Video</label>
+    </div>
+</li>
+<li class="formdivinnerlistinner">
+    <div>
+        <ion-checkbox [(ngModel)]="theCheckbox3" (ionChange)="filterByMedia()"></ion-checkbox>
+        <!-- <input name="picture" type="checkbox" value="b"  [(ngModel)]="theCheckbox3" (click)="filterByMedia()">-->
+        <label>Pictures</label>
+    </div>
+
+</li>
+</ul>
+    </div>
+<div class="sectionbody">
+
+    <div class="singlepost">
+
+  
+<!-- pictures block  start  -->
+<div class="col-1-2 col" *ngFor="let p of resultinparse">
+    <!--<div class="col-1-2 col" *ngFor="let p of serverSearchArray">-->
+      <div class="bodybloc5singleblock" *ngIf="p.post_type == 'picture'">
+        <div class="bodybloc5singleblockwrapper">
+          <div class="row no-gutter col-container bodybloc5top">
+            <div class="col-md-1 col bodybloc5topleft">
+              <div class="imgwrapper">
+                <a target="_blank" href="https://development.artistxp.com/userprofile/{{p._id}}/{{p.username}}" *ngIf="p.images!=null" class="imgwrapperImage">
+             <!--     <img alt="RTP5" src="https://s3.amazonaws.com/file.development.audiodeadline.com/pictures/{{p._id}}/{{p.images}}">-->
+                  <img alt="RTP5" src="https://s3.amazonaws.com/file.development.audiodeadline.com/{{p.images}}">
+                </a>
+                <a target="_blank" href="https://development.artistxp.com/profile"  *ngIf="p._id==user_id" class="imgwrapperImage">
+                 <!-- <img alt="RTP5" src="https://s3.amazonaws.com/file.development.audiodeadline.com/pictures/{{p._id}}/{{p.images}}">-->
+                  <img alt="RTP5" src="https://s3.amazonaws.com/file.development.audiodeadline.com/{{p.images}}">
+                </a>  <!--profile pictures-->
+
+              </div>
+            </div>
+            <div class="col-md-11 col bodybloc5topright">
+              <div class="row no-gutter col-container singleposttitleswrapper">
+                <div class="col-md-9 col">
+                  <a target="_blank" href="https://development.artistxp.com/userprofile/{{p._id}}/{{p.username}}"><h2>{{p.firstname}} {{p.lastname}}</h2></a>
+                </div>
+
+               <!-- <a target="_blank" href="https://development.artistxp.com/userprofile/{{p._id}}/{{p.username}}" *ngIf="p.images!=null" class="imgwrapperImage">
+                  <img alt="rightbannerdiv screen6" style="cursor: pointer" src="https://s3.amazonaws.com/file.development.audiodeadline.com/{{p.images}}">
+                </a>
+-->
+                <div class="col-md-3 col datecolwrapper">
+                <div class="input-group date" data-date-format="mm-dd-yyyy">
+                  <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                  </span>
+                  <input class="form-control" readonly="" type="text" placeholder="{{ convertunixtotimeago(p.posts.added_time)}}">
+                </div>
+              </div>
+              </div>
+              <div class="row no-gutter col-container bodybloc5bottom">
+                <div class="col-md-12 col audioblocknew">
+                  <div class="imgwrapper" *ngIf="p.post_type=='picture'">  <!--post images-->
+                    <img alt="RTR1" src="https://s3.amazonaws.com/file.development.audiodeadline.com/pictures/{{p._id}}/{{p.posts.image_pic}}">
+                  </div>
+
+  
+                
+
+                    <!--show the title of posts i.e picture---start-->
+                  <div class="images-title" *ngIf="p.post_type=='picture'">
+                    <h2 class="blackheader">{{p.posts.title_pic}} </h2>
+                  </div>
+
+                    <!-- <div class="images-title" *ngIf="p.post_type=='music'">
+                        <h2 class="blackheader">{{p.posts.title}} </h2>
+                    </div> -->
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row no-gutter col-container bodybloc5bottom">
+            <div class="col">
+              <div class="feedslinks">
+                <!--<span class="feedslinks1">
+                  <div class="imgwrapper">
+                    <span>
+                      <img src="https://s3.amazonaws.com/file.development.audiodeadline.com/5bbef848dfcab6c012c6f8a2_1560766300.png"></span>
+                  </div>
+                </span>
+                <span class="feedslinks2">
+                  <input class="form-control ng-untouched ng-pristine ng-valid" placeholder="" type="text">
+                  <strong class="feedslinks4"><a class="catboxinnerbutton"><i aria-hidden="true" class="fa fa-paper-plane"></i></a></strong>
+                </span>-->
+               <!-- <span class="feedslinks3 feedslinks3active1"><i class="fa fa-comment"></i><strong class="strongIcon1">Comments: </strong><strong class="strongIcon2">[0]</strong></span>-->
+                <span class="feedslinks3 feedslinks3active2" tabindex="0"><ion-icon ios="ios-chatboxes" class="fa fa-comment" md="md-chatboxes"></ion-icon>
+                  <!--<strong class="strongIcon1"> Comments: </strong>-->
+                  <strong class="strongIcon2">[{{p.comments}}]</strong>
+                </span>
+
+                <span  class="feedslinks4">
+                  <ion-fab bottom right >
+                    <button ion-fab class="sharemainbtn"><ion-icon name="share" class="fa-share-alt"></ion-icon></button>
+                    <ion-fab-list side="top">
+                      <button ion-fab><ion-icon name="logo-facebook" *ngIf="p.post_type=='picture'" (click)="facebooksharewithcatchblock(p.post_type,p)"></ion-icon>
+                          
+
+                      </button>
+                      <button ion-fab><ion-icon name="logo-twitter" *ngIf="p.post_type=='picture'" (click)="twittersharenewwithcatchblok(p.post_type,p)"></ion-icon>
+                          
+                      </button>
+                      <button ion-fab><ion-icon name="logo-linkedin" *ngIf="p.post_type=='picture'" (click)="linkedinsharewithcatchblock(p.post_type,p)"></ion-icon>
+                          
+                      </button>
+
+
+                        <button ion-fab><ion-icon name="logo-tumblr" *ngIf="p.post_type=='picture'" (click)="tumblrsharingwithcatchblock(p.post_type,p)"></ion-icon>
+                           
+                        </button>
+
+                    </ion-fab-list>
+                   
+</ion-fab>
+                </span>
+                <!--<span><i aria-hidden="true" class="fa fa-share-alt"></i> Share</span>-->
+                <span class="feedslinks5">
+                  <ion-icon name="eye" class="fa fa-eye"></ion-icon>
+                  <!--<strong class="strongIcon1">Views:</strong>-->
+                  <strong class="strongIcon2">[{{p.views}}]</strong>
+                </span>
+                <span>
+                   <ion-icon name="thumbs-up" class="fa fa-thumbs-o-up"></ion-icon>
+                  <!--<strong class="strongIcon1">Like: </strong>-->
+                  <strong class="strongIcon2">[{{p.likes}}]</strong>
+                </span>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bodybloc5singleblock" *ngIf="p.post_type == 'video'">
+          <div class="bodybloc5singleblockwrapper">
+            <div class="row no-gutter col-container bodybloc5top">
+              <div class="col-md-1 col bodybloc5topleft">
+                <div class="imgwrapper">
+                  <a target="_blank" href="https://development.artistxp.com/userprofile/{{p._id}}/{{p.username}}" *ngIf="p.images!=null" class="imgwrapperImage">
+               <!--     <img alt="RTP5" src="https://s3.amazonaws.com/file.development.audiodeadline.com/pictures/{{p._id}}/{{p.images}}">-->
+                    <img alt="RTP5" src="https://s3.amazonaws.com/file.development.audiodeadline.com/{{p.images}}">
+                  </a>
+                  <a target="_blank" href="https://development.artistxp.com/profile"  *ngIf="p._id==user_id" class="imgwrapperImage">
+                   <!-- <img alt="RTP5" src="https://s3.amazonaws.com/file.development.audiodeadline.com/pictures/{{p._id}}/{{p.images}}">-->
+                    <img alt="RTP5" src="https://s3.amazonaws.com/file.development.audiodeadline.com/{{p.images}}">
+                  </a>  <!--profile pictures-->
+  
+                </div>
+              </div>
+              <div class="col-md-11 col bodybloc5topright">
+                <div class="row no-gutter col-container singleposttitleswrapper">
+                  <div class="col-md-9 col">
+                    <a target="_blank" href="https://development.artistxp.com/userprofile/{{p._id}}/{{p.username}}"><h2>{{p.firstname}} {{p.lastname}}</h2></a>
+                  </div>
+  
+                 <!-- <a target="_blank" href="https://development.artistxp.com/userprofile/{{p._id}}/{{p.username}}" *ngIf="p.images!=null" class="imgwrapperImage">
+                    <img alt="rightbannerdiv screen6" style="cursor: pointer" src="https://s3.amazonaws.com/file.development.audiodeadline.com/{{p.images}}">
+                  </a>
+  -->
+                  <div class="col-md-3 col datecolwrapper">
+                  <div class="input-group date" data-date-format="mm-dd-yyyy">
+                    <span class="input-group-addon">
+                      <i class="glyphicon glyphicon-calendar"></i>
+                    </span>
+                    <input class="form-control" readonly="" type="text" placeholder="{{ convertunixtotimeago(p.posts.added_time)}}">
+                  </div>
+                </div>
+                </div>
+                <div class="row no-gutter col-container bodybloc5bottom">
+                  <div class="col-md-12 col audioblocknew">
+                    <!-- <div class="imgwrapper" *ngIf="p.post_type=='picture'">  post images
+                      <img alt="RTR1" src="https://s3.amazonaws.com/file.development.audiodeadline.com/pictures/{{p._id}}/{{p.posts.image_pic}}">
+                    </div>  -->
+                   
+                    <!--allmedia video (vimeo,youtube,file) iframe implementation start-->
+  
+                    <div class="imgwrapper" *ngIf="p.post_type=='video'">
+                        <div class="iframevideo">
+                            <!--<iframe width="100%" *ngIf="p.posts.type=='vimeo'" height="290" attr.src="https://s3.amazonaws.com/file.development.audiodeadline.com/video/{{p._id}}/{{p.posts.vurl}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+                        <iframe width="100%" *ngIf="p.posts.type=='vimeo'" height="290" [attr.src]="p.posts.vurl" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  
+                        <iframe id="player" width="100%" *ngIf="p.posts.type=='youtube'" [attr.src]="p.posts.vurl" frameborder="0"></iframe>
+                          <!--<h1 style="color: white">{{p.posts.vurl}}</h1>-->
+                          <!--<h1 style="color: white">{{p.posts.videoUrl}}</h1>-->
+  
+  
+                            <!--<youtube-player class="yt_players" *ngIf="val.type=='youtube'" [videoId]="val.vurl" [height]="290" (change)="onStateChangetrending($event)"></youtube-player>-->
+                            <video  *ngIf="p.posts.type=='file'" style="width:100%;height:290px;" controls>
+                                <source src="https://s3.amazonaws.com/file.development.audiodeadline.com/video/{{p._id}}/{{p.posts.videoUrl}}" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <!--allmedia video (vimeo,youtube,file) iframe implementation stop-->
+                     
+                      <div class="images-title" *ngIf="p.post_type=='video'">
+                          <h2 class="blackheader">{{p.posts.title}} </h2>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row no-gutter col-container bodybloc5bottom">
+              <div class="col">
+                <div class="feedslinks">
+                  <!--<span class="feedslinks1">
+                    <div class="imgwrapper">
+                      <span>
+                        <img src="https://s3.amazonaws.com/file.development.audiodeadline.com/5bbef848dfcab6c012c6f8a2_1560766300.png"></span>
+                    </div>
+                  </span>
+                  <span class="feedslinks2">
+                    <input class="form-control ng-untouched ng-pristine ng-valid" placeholder="" type="text">
+                    <strong class="feedslinks4"><a class="catboxinnerbutton"><i aria-hidden="true" class="fa fa-paper-plane"></i></a></strong>
+                  </span>-->
+                 <!-- <span class="feedslinks3 feedslinks3active1"><i class="fa fa-comment"></i><strong class="strongIcon1">Comments: </strong><strong class="strongIcon2">[0]</strong></span>-->
+                  <span class="feedslinks3 feedslinks3active2" tabindex="0"><ion-icon ios="ios-chatboxes" class="fa fa-comment" md="md-chatboxes"></ion-icon>
+                    <!--<strong class="strongIcon1"> Comments: </strong>-->
+                    <strong class="strongIcon2">[{{p.comments}}]</strong>
+                  </span>
+  
+                  <span  class="feedslinks4">
+                    <ion-fab bottom right >
+                      <button ion-fab class="sharemainbtn"><ion-icon name="share" class="fa-share-alt"></ion-icon></button>
+                      <ion-fab-list side="top">
+                        <button ion-fab>
+                            <ion-icon name="logo-facebook" *ngIf="p.post_type=='video'" (click)="facebooksharewithcatchblock(p.post_type,p)"></ion-icon>
+  
+                        </button>
+                        <button ion-fab>
+                            <ion-icon name="logo-twitter" *ngIf="p.post_type=='video'" (click)="twittersharenewwithcatchblok(p.post_type,p)"></ion-icon>
+                        </button>
+                        <button ion-fab>
+                            <ion-icon name="logo-linkedin" *ngIf="p.post_type=='video'" (click)="linkedinsharewithcatchblock(p.post_type,p)"></ion-icon>
+                        </button>
+  
+  
+                          <button ion-fab>
+                              <ion-icon name="logo-tumblr" *ngIf="p.post_type=='video'" (click)="tumblrsharingwithcatchblock(p.post_type,p)"></ion-icon>
+                          </button>
+  
+                      </ion-fab-list>
+                      <!-- <ion-fab-list side="left">
+                         <button ion-fab>Vimeo</button>
+                       </ion-fab-list>-->
+  </ion-fab>
+                  </span>
+                  <!--<span><i aria-hidden="true" class="fa fa-share-alt"></i> Share</span>-->
+                  <span class="feedslinks5">
+                    <ion-icon name="eye" class="fa fa-eye"></ion-icon>
+                    <!--<strong class="strongIcon1">Views:</strong>-->
+                    <strong class="strongIcon2">[{{p.views}}]</strong>
+                  </span>
+                  <span>
+                     <ion-icon name="thumbs-up" class="fa fa-thumbs-o-up"></ion-icon>
+                    <!--<strong class="strongIcon1">Like: </strong>-->
+                    <strong class="strongIcon2">[{{p.likes}}]</strong>
+                  </span>
+  
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bodybloc5singleblock" *ngIf="p.post_type == 'music'">
+            <div class="bodybloc5singleblockwrapper">
+              <div class="row no-gutter col-container bodybloc5top">
+                <div class="col-md-1 col bodybloc5topleft">
+                  <div class="imgwrapper">
+                    <a target="_blank" href="https://development.artistxp.com/userprofile/{{p._id}}/{{p.username}}" *ngIf="p.images!=null" class="imgwrapperImage">
+                 <!--     <img alt="RTP5" src="https://s3.amazonaws.com/file.development.audiodeadline.com/pictures/{{p._id}}/{{p.images}}">-->
+                      <img alt="RTP5" src="https://s3.amazonaws.com/file.development.audiodeadline.com/{{p.images}}">
+                    </a>
+                    <a target="_blank" href="https://development.artistxp.com/profile"  *ngIf="p._id==user_id" class="imgwrapperImage">
+                     <!-- <img alt="RTP5" src="https://s3.amazonaws.com/file.development.audiodeadline.com/pictures/{{p._id}}/{{p.images}}">-->
+                      <img alt="RTP5" src="https://s3.amazonaws.com/file.development.audiodeadline.com/{{p.images}}">
+                    </a>  <!--profile pictures-->
+    
+                  </div>
+                </div>
+                <div class="col-md-11 col bodybloc5topright">
+                  <div class="row no-gutter col-container singleposttitleswrapper">
+                    <div class="col-md-9 col">
+                      <a target="_blank" href="https://development.artistxp.com/userprofile/{{p._id}}/{{p.username}}"><h2>{{p.firstname}} {{p.lastname}}</h2></a>
+                    </div>
+    
+                   <!-- <a target="_blank" href="https://development.artistxp.com/userprofile/{{p._id}}/{{p.username}}" *ngIf="p.images!=null" class="imgwrapperImage">
+                      <img alt="rightbannerdiv screen6" style="cursor: pointer" src="https://s3.amazonaws.com/file.development.audiodeadline.com/{{p.images}}">
+                    </a>
+    -->
+                    <div class="col-md-3 col datecolwrapper">
+                    <div class="input-group date" data-date-format="mm-dd-yyyy">
+                      <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                      </span>
+                      <input class="form-control" readonly="" type="text" placeholder="{{ convertunixtotimeago(p.posts.added_time)}}">
+                    </div>
+                  </div>
+                  </div>
+                  <div class="row no-gutter col-container bodybloc5bottom">
+                    <div class="col-md-12 col audioblocknew">
+                      <!-- <div class="imgwrapper" *ngIf="p.post_type=='picture'">  post images
+                        <img alt="RTR1" src="https://s3.amazonaws.com/file.development.audiodeadline.com/pictures/{{p._id}}/{{p.posts.image_pic}}">
+                      </div> -->
+    
+                       
+                            <!-- allmeadia  audio  start-->
+    
+                        <div class="imgwrapper" *ngIf="p.post_type=='music'">
+                          <div class="audioinfo">
+                              <div class="audioinfologo"><img alt="%" src="https://artistxp.com/assets/images/artistheaderlogo.png"></div>
+                              <div class="audioinfotitle">{{p.posts.title_music}} </div>
+                              <div class="audioinfousername"> By - <span> </span></div>
+                          </div>
+                          <img alt="RTR1" src="https://artistxp.com/assets/images/pause-gif-image.jpg">
+                          <audio id="audioplayerid{{p._id}}"> 
+                              <source type="audio/mpeg" [attr.src]="p.posts.musicurl" id="audioid">
+                          
+                                Your browser does not support the audio tag.
+        
+                          </audio>
+                      </div>
+                                   <!--audio sliders-----------start-->
+                      <div class="sectionheaderinnercontainer">
+                        <div class="playsilider">
+                            <ion-range  min=lower max=upper options="options2"
+                             (ionChange)="changeaudioplayertimer(p)">
+                  
+                                <ion-icon slot="start" size="small" name="sunny"></ion-icon>
+                                <ion-icon slot="end" name="sunny"> </ion-icon>
+                            </ion-range>
+                           
+                        </div>
+                        <div class="playericons">
+                            <div class="audioicon_d audioicon1">
+                                <p>00:00:00/00:00:00 </p>
+                                <!-- <p>{{convertsecstoformat(value2[p._id])}}/{{convertsecstoformat(p.duration)}}</p> -->
+                            </div>
+                            <div class="audioicon_d audioicon2">
+
+                              <!--  {{!ismusicflag}} i.e true -->
+                                <span class="icons1"><img alt="#" src="https://artistxp.com/assets/images/audio_leftarrow.png"></span>
+                                <span class="icons2" *ngIf="!ismusicflag" (click)="playmusic(p)"><img alt="#" src="https://artistxp.com/assets/images/audio_playicon.png"></span>
+                                <span class="icons2" *ngIf="ismusicflag" (click)="playmusic(p)"><img alt="#" src="https://artistxp.com/assets/images/audio_pauseicon.png"></span>
+                                <span class="icons3"><img alt="#" src="https://artistxp.com/assets/images/audio_rightarrow.png"></span>
+                            </div> 
+                            <div class="audioicon_d audioicon3">
+                                <span class="icons01"><img alt="#" src="https://artistxp.com/assets/images/audioicon1-inactive.png"></span>
+                                <span class="icons02"><img alt="#" src="https://artistxp.com/assets/images/audioicon2.png"></span>
+                                <span class="icons03">
+                          <ion-range min= lower max= upper> 
+                            <ion-icon slot="start" size="small" name="sunny"></ion-icon>
+                            <ion-icon slot="end" name="sunny"></ion-icon>
+                          </ion-range>
+                          <!-- <ng5-slider [(value)]="value2[val._id]"
+                           [options]="options2" (userChange)="changeaudioplayertimertrending()"
+                            (valueChange)="setval1()"></ng5-slider> -->
+
+
+                          <!-- <ion-range min="-200" max="200" [(ngModel)]="saturation" color="secondary">
+                              <ion-label range-left>-200</ion-label>
+                              <ion-label range-right>200</ion-label>
+                            </ion-range> -->
+                         
+
+
+                        </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--audio sliders-----------end-->
+                      <!-- allmeadia  audio  end-->
+    
+                        
+    
+                        <!--show the title of posts i.e picture,video and music----end-->
+    
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row no-gutter col-container bodybloc5bottom">
+                <div class="col">
+                  <div class="feedslinks">
+                    <!--<span class="feedslinks1">
+                      <div class="imgwrapper">
+                        <span>
+                          <img src="https://s3.amazonaws.com/file.development.audiodeadline.com/5bbef848dfcab6c012c6f8a2_1560766300.png"></span>
+                      </div>
+                    </span>
+                    <span class="feedslinks2">
+                      <input class="form-control ng-untouched ng-pristine ng-valid" placeholder="" type="text">
+                      <strong class="feedslinks4"><a class="catboxinnerbutton"><i aria-hidden="true" class="fa fa-paper-plane"></i></a></strong>
+                    </span>-->
+                   <!-- <span class="feedslinks3 feedslinks3active1"><i class="fa fa-comment"></i><strong class="strongIcon1">Comments: </strong><strong class="strongIcon2">[0]</strong></span>-->
+                    <span class="feedslinks3 feedslinks3active2" tabindex="0"><ion-icon ios="ios-chatboxes" class="fa fa-comment" md="md-chatboxes"></ion-icon>
+                      <!--<strong class="strongIcon1"> Comments: </strong>-->
+                      <strong class="strongIcon2">[{{p.comments}}]</strong>
+                    </span>
+    
+                    <span  class="feedslinks4">
+                      <ion-fab bottom right >
+                        <button ion-fab class="sharemainbtn"><ion-icon name="share" class="fa-share-alt"></ion-icon></button>
+                        <ion-fab-list side="top">
+                          <button ion-fab><ion-icon name="logo-facebook" *ngIf="p.post_type=='picture'" (click)="facebooksharewithcatchblock(p.post_type,p)"></ion-icon>
+                              <ion-icon name="logo-facebook" *ngIf="p.post_type=='video'" (click)="facebooksharewithcatchblock(p.post_type,p)"></ion-icon>
+    
+                          </button>
+                          <button ion-fab><ion-icon name="logo-twitter" *ngIf="p.post_type=='picture'" (click)="twittersharenewwithcatchblok(p.post_type,p)"></ion-icon>
+                              <ion-icon name="logo-twitter" *ngIf="p.post_type=='video'" (click)="twittersharenewwithcatchblok(p.post_type,p)"></ion-icon>
+                          </button>
+                          <button ion-fab><ion-icon name="logo-linkedin" *ngIf="p.post_type=='picture'" (click)="linkedinsharewithcatchblock(p.post_type,p)"></ion-icon>
+                              <ion-icon name="logo-linkedin" *ngIf="p.post_type=='video'" (click)="linkedinsharewithcatchblock(p.post_type,p)"></ion-icon>
+                          </button>
+    
+    
+                            <button ion-fab><ion-icon name="logo-tumblr" *ngIf="p.post_type=='picture'" (click)="tumblrsharingwithcatchblock(p.post_type,p)"></ion-icon>
+                                <ion-icon name="logo-tumblr" *ngIf="p.post_type=='video'" (click)="tumblrsharingwithcatchblock(p.post_type,p)"></ion-icon>
+                            </button>
+    
+                        </ion-fab-list>
+                        <!-- <ion-fab-list side="left">
+                           <button ion-fab>Vimeo</button>
+                         </ion-fab-list>-->
+    </ion-fab>
+                    </span>
+                    <!--<span><i aria-hidden="true" class="fa fa-share-alt"></i> Share</span>-->
+                    <span class="feedslinks5">
+                      <ion-icon name="eye" class="fa fa-eye"></ion-icon>
+                      <!--<strong class="strongIcon1">Views:</strong>-->
+                      <strong class="strongIcon2">[{{p.views}}]</strong>
+                    </span>
+                    <span>
+                       <ion-icon name="thumbs-up" class="fa fa-thumbs-o-up"></ion-icon>
+                      <!--<strong class="strongIcon1">Like: </strong>-->
+                      <strong class="strongIcon2">[{{p.likes}}]</strong>
+                    </span>
+    
+    
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+<!-- pictures block end -->
+
+
+
+
+
+      
+      <!-- <a class="gsharelink" style="display: none;" target="_blank" href="">Share</a> -->
+  </div>
+
+  <div>
+       
+  </div>
+</div>
 </ion-content>

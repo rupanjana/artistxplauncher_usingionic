@@ -1,0 +1,465 @@
+<!--
+  Generated template for the BlockchainPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+  <ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle slot="right" class="ionbuttonrightmenu">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>BlockChain</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+
+
+
+<div class="blockchainmainwrapper">
+  <div class="container-fluid communitysignupnewblock1 signupforblockchainblock1">
+    <div class="row">
+      <div class="container newwrapper">
+        <h1 class="titletxt1">Protect your creative<br> work with Blockchain! </h1>
+        <div class="communitysignupnewblock1inner">
+
+          <div class="communitysignupnewblock1left">
+            <div class="bannerleftnew">
+              <h2 class="titletxt2">Certify ownership of finished<br> products AND works in progress!<!--Record ownership of not<br> only finished product but also<br> works in progress!--> </h2>
+              <h1 class="titletxt3">Exclusive on <span><img src="../../assets/imgs/artistheaderlogo.png"></span></h1>
+              <div class="manimgwrapper">
+                <img src="../../assets/imgs/signupblockchainleftimgman.png" class="imgmanleft">
+
+
+                <ul class="vbllist1">
+                  <li><span>Inexpensive-</span>A fraction of the cost of registering<br> through government agencies</li>
+                  <li><span>Fast-</span>Certify your work in a matter of minutes, not<br> weeks or months</li>
+                  <li><span>Convenient-</span>No need to fill out extensive forms,<br> do it all right through ArtistXP!</li>
+                </ul>
+                <img src="../../assets/imgs/signupblockchainleftmanhand.png" class="manhand">
+              </div>
+              <div class="vblb6img5">
+                <h2>Block chain your Media now!</h2>
+              </div>
+
+
+            </div>
+
+          </div>
+          <div class="communitysignupnewblock1right">
+            <h2 class="formtoptxt">Only $19.95<br> for 10 Certifications!<!--For 10 Medias!--> </h2>
+
+
+<form class="formdiv" novalidate [formGroup]="blockchainform">
+  <div class="cslandingformwrapper">
+    <div class="cslandingformheader">
+      <h1>protect your <span>creative work!</span></h1>
+    </div>
+    <ion-row class="form-group">
+      <input class="form-control" [formControl]="blockchainform.controls['firstname']" type="text" placeholder="Firstname">
+    </ion-row>
+
+    <ion-row *ngIf="blockchainform.controls['firstname'].valid!=true && blockchainform.controls['firstname'].touched && blockchainform.controls['firstname'].pristine" class="alert alert-danger">
+      <span  class="errorSpan2">BlockChain Firstname field can not be blank</span>
+    </ion-row>
+
+    <ion-row class="form-group">
+      <input class="form-control" [formControl]="blockchainform.controls['lastname']" type="text" placeholder="Lastname">
+    </ion-row>
+
+    <ion-row *ngIf="blockchainform.controls['lastname'].valid!=true && blockchainform.controls['lastname'].touched && blockchainform.controls['lastname'].pristine"  class="alert alert-danger">
+      <span class="errorSpan2">BlockChain Lastname Field Can not be Blank</span>
+    </ion-row>
+    <ion-row class="form-group">
+      <input class="form-control" [formControl]="blockchainform.controls['email']" type="text"  placeholder="Email">
+    </ion-row>
+    <ion-row *ngIf="blockchainform.controls['email'].valid!=true && blockchainform.controls['email'].touched && blockchainform.controls['email'].pristine" class="alert alert-danger">
+      <span class="errorSpan2">BlockChain Email Field Can not be Blank</span>
+    </ion-row>
+    <ion-row class="form-group">
+      <input class="form-control" [formControl]="blockchainform.controls['phone']" type="number" placeholder="Phone">
+    </ion-row>
+    <ion-row *ngIf="blockchainform.controls['phone'].valid!=true && blockchainform.controls['phone'].touched && blockchainform.controls['phone'].pristine"  class="alert alert-danger">
+      <span class="errorSpan2">BlockChain Lastname Field Can not be Blank</span>
+    </ion-row>
+    <ion-row class="form-group">
+      <input class="form-control" [formControl]="blockchainform.controls['address']" type="text" placeholder="Your Address">
+    </ion-row>
+    <ion-row *ngIf="blockchainform.controls['address'].valid!=true && blockchainform.controls['address'].touched && blockchainform.controls['address'].pristine"  class="alert alert-danger">
+      <span class="errorSpan2">BlockChain address Field Can not be Blank</span>
+    </ion-row>
+    <ion-row class="form-group">
+      <input class="form-control" [formControl]="blockchainform.controls['city']" type="text" placeholder="Your city">
+    </ion-row>
+    <ion-row *ngIf="blockchainform.controls['city'].valid!=true && blockchainform.controls['city'].touched && blockchainform.controls['city'].pristine"  class="alert alert-danger">
+      <span class="errorSpan2">BlockChain city Field Can not be Blank</span>
+    </ion-row>
+    <ion-row class="form-group">
+      <!--<label>City</label>-->
+      <ion-select class="form-control" [formControl]="blockchainform.controls['state']" placeholder="State">
+        <!--<ion-option value="">Select State</ion-option>-->
+        <ion-option  value="{{res.abbreviation}}" *ngFor="let res of state">{{res.name}}</ion-option>
+      </ion-select>
+    </ion-row>
+    <ion-row *ngIf="blockchainform.controls['state'].valid!=true && blockchainform.controls['state'].touched && blockchainform.controls['state'].pristine"  class="alert alert-danger">
+      <span class="errorSpan2">BlockChain state Field Can not be Blank</span>
+    </ion-row>
+    <ion-row class="form-group">
+      <input class="form-control" [formControl]="blockchainform.controls['zip']" type="text" placeholder="Zip">
+    </ion-row>
+    <ion-row *ngIf="blockchainform.controls['zip'].valid!=true && blockchainform.controls['zip'].touched && blockchainform.controls['zip'].pristine"  class="alert alert-danger">
+      <span class="errorSpan2">BlockChain Zip Field Can not be Blank</span>
+    </ion-row>
+
+  </div>
+  <div class="btnnewwrapper">
+    <button  ion-button block class="btnSubmit btnbuyticket_genuserlan" type="submit" (click)="blockchainsubmit()">SUBMIT</button>
+  </div>
+
+</form>
+
+
+
+           <!-- <form class="formdiv" name="dancingform" novalidate [formGroup]="blockchainForm" (ngSubmit)="dosubmit(blockchainForm.value)">
+              <div class="cslandingformwrapper" #destinationRef>
+                <div class="cslandingformheader">
+                  <h1>protect your <span>creative work!</span></h1>
+                </div>
+                <div class="cslandingforminnerwrapper">
+
+                  <div class="form-group hide">
+                    &lt;!&ndash; <input name="_id" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text"  [(ngModel)]="_id" placeholder="_id"> &ndash;&gt;
+                  </div>
+                  <div class="form-group">
+                    <span class="has-error" *ngIf ="existmsg!='' "> {{existmsg}}</span>
+                    <input name="first-name" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="_commonservices.inputUntouch(blockchainForm,'firstname')" [formControl]="blockchainForm.controls['firstname']" placeholder="first name">
+                    <span class="has-error" *ngIf ="blockchainForm.controls['firstname'].touched && !blockchainForm.controls['firstname'].valid"> First Name field can not be blank</span>
+                  </div>
+                  <div class="form-group">
+                    <input name="last-name" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="_commonservices.inputUntouch(blockchainForm,'lastname')" [formControl]="blockchainForm.controls['lastname']" placeholder="last name">
+                    <span class="has-error" *ngIf ="blockchainForm.controls['lastname'].touched && !blockchainForm.controls['lastname'].valid"> Last Name field can not be blank</span>
+                  </div>
+
+                  <div class="form-group">
+                    <input name="your-email" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="_commonservices.inputUntouch(blockchainForm,'email')" [formControl]="blockchainForm.controls['email']" placeholder="email">
+                    <span class="has-error" *ngIf ="blockchainForm.controls['email'].touched && !blockchainForm.controls['email'].valid"> Email field can not be blank</span>
+                  </div>
+
+                  <div class="form-group">
+                    <input name="your-phone" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" [formControl]="blockchainForm.controls['phone']" (blur)="_commonservices.inputUntouch(blockchainForm,'phone')"  placeholder="phone">
+                    <span class="has-error" *ngIf ="blockchainForm.controls['phone'].touched && !blockchainForm.controls['phone'].valid"> Phone field can not be blank</span>
+                  </div>
+
+                  <div class="form-group">
+                    <input name="address" class="form-control" type="text" [formControl]="blockchainForm.controls['address']" (blur)="_commonservices.inputUntouch(blockchainForm,'address')" placeholder="Your Address">
+                    <span class="has-error" *ngIf ="blockchainForm.controls['address'].touched && !blockchainForm.controls['address'].valid"> Address field can not be blank</span>
+                  </div>
+
+                  <div class="form-group">
+                    &lt;!&ndash;<label><span>Hometown:</span> </label>&ndash;&gt;
+                    <input name="city" class="form-control" type="text" [formControl]="blockchainForm.controls['city']" (blur)="_commonservices.inputUntouch(blockchainForm,'city')"  placeholder="city">
+                    <span class="has-error" *ngIf ="blockchainForm.controls['city'].touched && !blockchainForm.controls['city'].valid"> Hometown field can not be blank</span>
+                  </div>
+
+
+                  <div class="form-group hide">
+                    &lt;!&ndash;<input name="country" class="form-control" type="text" [formControl]="blockchainForm.controls['country']" (blur)="_commonservices.inputUntouch(blockchainForm,'country')"  placeholder="country">&ndash;&gt;
+                    &lt;!&ndash;<select name="country" class="form-control classic" [formControl]="blockchainForm.controls['country']" (blur)="_commonservices.inputUntouch(blockchainForm,'country')">
+                      <option value="">Select country</option>
+                      <option value="USA">USA</option>
+                      <option value="UK">UK</option>
+                      <option value="Australia">Australia</option>
+                      <option value="Korea">Korea</option>
+                      &lt;!&ndash;<option *ngFor="let item of country" value="{{item.abbreviation}}">{{item.name}}</option>&ndash;&gt;
+                    </select>&ndash;&gt;
+                    <input name="country" class="form-control" type="text" [formControl]="blockchainForm.controls['country']" (blur)="_commonservices.inputUntouch(blockchainForm,'country')"  placeholder="country">
+                    <span class="has-error" *ngIf ="blockchainForm.controls['country'].touched && !blockchainForm.controls['country'].valid"> Country field can not be blank</span>
+                  </div>
+
+
+                  <div class="form-group">
+                    &lt;!&ndash;<label><span>State/Province:</span></label>&ndash;&gt;
+                    <select name="state" class="form-control classic" [formControl]="blockchainForm.controls['state']" (blur)="_commonservices.inputUntouch(blockchainForm,'state')">
+                      <option value="">Select State</option>
+                      <option *ngFor="let item of state" value="{{item.abbreviation}}">{{item.name}}</option>
+                    </select>
+                    <span class="has-error" *ngIf ="blockchainForm.controls['state'].touched && !blockchainForm.controls['state'].valid"> State/Province field can not be blank</span>
+                  </div>
+
+
+
+
+
+                  <div class="form-group">
+                    &lt;!&ndash;<label><span>ZipCode:</span> </label>&ndash;&gt;
+                    <input name="zip" class="form-control" type="text" [formControl]="blockchainForm.controls['zip']" (blur)="_commonservices.inputUntouch(blockchainForm,'zip')" placeholder="zip">
+                    <span class="has-error" *ngIf ="blockchainForm.controls['zip'].touched && !blockchainForm.controls['zip'].valid"> ZipCode field can not be blank</span>
+                  </div>
+
+
+
+
+                </div>
+                <div class="btnnewwrapper">
+                  <input class="btnbuyticket_genuserlan" value="Submit" type="submit">
+                </div>
+              </div>
+              <div class="landingformfooter_genuserlan"></div>
+            </form>-->
+
+
+            <!--<form class="formdiv" name="dancingform" novalidate [formGroup]="blockchainForm" (ngSubmit)="dosubmit(blockchainForm.value)">
+              <div class="cslandingformwrapper" #destinationRef>
+                <div class="cslandingformheader">
+                  <h1>protect your <span>creative work!</span></h1>
+                </div>
+                <div class="cslandingforminnerwrapper">
+
+                  <div class="form-group hide">
+                    <input name="_id" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="_commonservices.inputUntouch(blockchainForm,'_id')" [formControl]="blockchainForm.controls['_id']" placeholder="_id">
+                    <span class="has-error" *ngIf ="blockchainForm.controls['_id'].touched && !blockchainForm.controls['_id'].valid"> First Name field can not be blank</span>
+                  </div>
+                  <div class="form-group">
+                    <input name="first-name" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="_commonservices.inputUntouch(blockchainForm,'firstname')" [formControl]="blockchainForm.controls['firstname']" placeholder="first name">
+                    <span class="has-error" *ngIf ="blockchainForm.controls['firstname'].touched && !blockchainForm.controls['firstname'].valid"> First Name field can not be blank</span>
+                  </div>
+                  <div class="form-group">
+                    <input name="last-name" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="_commonservices.inputUntouch(blockchainForm,'lastname')" [formControl]="blockchainForm.controls['lastname']" placeholder="last name">
+                    <span class="has-error" *ngIf ="blockchainForm.controls['lastname'].touched && !blockchainForm.controls['lastname'].valid"> Last Name field can not be blank</span>
+                  </div>
+                  <div class="form-group">
+                    <input name="your-email" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="_commonservices.inputUntouch(blockchainForm,'email')" [formControl]="blockchainForm.controls['email']" placeholder="email">
+                    <span class="has-error" *ngIf ="blockchainForm.controls['email'].touched && !blockchainForm.controls['email'].valid"> Email field can not be blank</span>
+                  </div>
+
+                  <div class="form-group">
+                    <input name="your-phone" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" [formControl]="blockchainForm.controls['phone']" (blur)="_commonservices.inputUntouch(blockchainForm,'phone')"  placeholder="phone">
+                    <span class="has-error" *ngIf ="blockchainForm.controls['phone'].touched && !blockchainForm.controls['phone'].valid"> Phone field can not be blank</span>
+                  </div>
+
+                  <div class="form-group">
+                    <input name="address" class="form-control" type="text" [formControl]="blockchainForm.controls['address']" (blur)="_commonservices.inputUntouch(blockchainForm,'address')" placeholder="Your Address">
+                    <span class="has-error" *ngIf ="blockchainForm.controls['address'].touched && !blockchainForm.controls['address'].valid"> Address field can not be blank</span>
+                  </div>
+
+                  <div class="form-group">
+                    &lt;!&ndash;<label><span>Hometown:</span> </label>&ndash;&gt;
+                    <input name="city" class="form-control" type="text" [formControl]="blockchainForm.controls['city']" (blur)="_commonservices.inputUntouch(blockchainForm,'city')"  placeholder="city">
+                    <span class="has-error" *ngIf ="blockchainForm.controls['city'].touched && !blockchainForm.controls['city'].valid"> Hometown field can not be blank</span>
+                  </div>
+
+
+                  &lt;!&ndash;<div class="form-group">
+                    &lt;!&ndash;<input name="country" class="form-control" type="text" [formControl]="blockchainForm.controls['country']" (blur)="_commonservices.inputUntouch(blockchainForm,'country')"  placeholder="country">&ndash;&gt;
+                    <select name="country" class="form-control classic" [formControl]="blockchainForm.controls['country']" (blur)="_commonservices.inputUntouch(blockchainForm,'country')">
+                      <option value="">Select country</option>
+                      <option value="USA">USA</option>
+                      <option value="UK">UK</option>
+                      <option value="Australia">Australia</option>
+                      <option value="Korea">Korea</option>
+                      &lt;!&ndash;<option *ngFor="let item of country" value="{{item.abbreviation}}">{{item.name}}</option>&ndash;&gt;
+                    </select>
+                    <span class="has-error" *ngIf ="blockchainForm.controls['country'].touched && !blockchainForm.controls['country'].valid"> Country field can not be blank</span>
+                  </div>&ndash;&gt;
+
+
+                  <div class="form-group">
+                    &lt;!&ndash;<label><span>State/Province:</span></label>&ndash;&gt;
+                    <select name="state" class="form-control classic" [formControl]="blockchainForm.controls['state']" (blur)="_commonservices.inputUntouch(blockchainForm,'state')">
+                      <option value="">Select State</option>
+                      <option *ngFor="let item of state" value="{{item.abbreviation}}">{{item.name}}</option>
+                    </select>
+                    <span class="has-error" *ngIf ="blockchainForm.controls['state'].touched && !blockchainForm.controls['state'].valid"> State/Province field can not be blank</span>
+                  </div>
+
+
+
+
+
+                  <div class="form-group">
+                    &lt;!&ndash;<label><span>ZipCode:</span> </label>&ndash;&gt;
+                    <input name="zip" class="form-control" type="text" [formControl]="blockchainForm.controls['zip']" (blur)="_commonservices.inputUntouch(blockchainForm,'zip')" placeholder="zip">
+                    <span class="has-error" *ngIf ="blockchainForm.controls['zip'].touched && !blockchainForm.controls['zip'].valid"> ZipCode field can not be blank</span>
+                  </div>
+
+
+
+
+                </div>
+                <div class="btnnewwrapper">
+                  <input class="btnbuyticket_genuserlan" value="Submit" type="submit">
+                </div>
+              </div>
+              <div class="landingformfooter_genuserlan"></div>
+            </form>-->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toprightgradientbg">
+      <img src="../../assets/imgs/signupblockchainrightyellowbg.png">
+    </div>
+
+  </div>
+
+  <div class="container-fluid signupforblockchainblock2">
+    <div class="row signupforblockchainblock2top">
+      <div class="container newwrapper">
+        <div class="newwrapperinner">
+          <h1>Exclusive on ArtistXP! <br>Blockchain your Media</h1>
+          <div class="signupforblockchainblock2content">
+            <div class="signupforblockchainblock2left">
+              <p>As an artist, you know how challenging it is to protect your creative work.
+                How do you claim and certify ownership of finished products AND works in progress!<!--record ownership of not only a finished product, but works in progress?--><br><br><br>
+                Blockchain technology now offers a simple, secure way to create a
+                blockchain-based trail of records proving the existence and integrity of your creative piece of work.<br><br>
+                Our easy-to-use certification process helps you generate evidence of your creative process, giving you strong authorship proof.
+              </p>
+              <a class="btnyellownew" (click)="scrollToTop()">buy now</a>
+            </div>
+            <div class="signupforblockchainblock2right">
+              <div class="signupforblockchainimgright">
+                <img src="../../assets/imgs/signupforblockchainimgright.png" class="signupforblockchainimgrightcls">
+              </div>
+              <img class="iconblockchain" src="../../assets/imgs/signupblockchainlogoiconmd.png">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="signupforblockchainblock2leftbg"></div>
+    </div>
+    <div class="row signupforblockchainblock2bottom">
+      <div class="container newwrapper">
+        <div class="newwrapperinner">
+          <div class="signupforblockchainblock2bottomcontent">
+            <h2>Convenient</h2>
+            <p>No need to fill out extensive forms, do it all right through ArtistXP</p>
+            <h2>Inexpensive</h2>
+            <p>A fraction of the cost of registering through government agencies</p>
+            <h2>Fast</h2>
+            <p>Certify your work in a matter of minutes, not weeks or months</p>
+            <h2>Decentralized & tamper-proof timestamp</h2>
+            <p>Think of it like a digital notary (that’s more credible than a traditional one)</p>
+            <h2>Links versions of the same asset</h2>
+            <p>Creates a trail of evidence that you are the creator</p>
+            <h2>Anonymous</h2>
+            <p>All personal information kept private behind cryptography</p>
+            <h2>Public availability</h2>
+            <p>Transparency through the block explorer keeps all transactions public </p>
+            <h2>Downloadable certificate</h2>
+            <p>Documents your certification and includes information so you can access it from the blockchain at any time</p>
+            <img class="iconblockchain" src="../../assets/imgs/signupblockchainlogoicondouble.png">
+            <a class="btnyellownew"  (click)="scrollToTop()">buy now</a>
+
+          </div>
+        </div>
+      </div>
+      <div class="signupforblockchainblock2rightbg">
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid signupforblockchainblock3">
+    <div class="row">
+      <div class="container newwrapperinner">
+        <h1>What Blockchain Is and How it Works</h1>
+        <p>You’ve probably heard of bitcoin, but have you heard of blockchain? It’s the technology behind cryptocurrency -- and it’s changing the way information is stored and exchanged. Blockchain is a digital ledger that can record and track anything of value, like financial transactions, goods, property, medical records, or certification of a creative asset.<br><br>
+          Rather than storing information in a central database, like we’re used to, blockchains store information across a network of computers. Information is collected in groups called blocks, which are then linked together to form a chain.
+        </p>
+        <ul class="signupforblockchainblock3lists">
+          <li><div class="image"><span>Increased Efficiency</span> Blockchain is built on a peer-to-peer system, which eliminates the need for lawyers, banks, and other third parties. By streamlining and automating, transactions can be completed faster and more efficiently--which often means reduced cost.</div><div style=”clear:both”></div></li>
+          <li><div class="image"><span>Safety through Decentralization</span> Since blockchain stores data on a widespread network of computers, data is safer from fraud and unauthorized activity.</div><div style=”clear:both”></div></li>
+          <li><div class="image"><span>Enhanced Security</span> Each block of information in blockchain contains data about the blocks surrounding it, so no one can alter or remove a block without affecting the rest of the chain. This keeps data safe and secure. </div><div style=”clear:both”></div></li>
+          <li><div class="image"><span>Greater Transparency</span> Data on a blockchain is more accurate, consistent, and available to all participants<br> who have permissioned access. Privacy is ensured through the use of<br> private keys and cryptography, while still maintaining transparency of the data. </div><div style=”clear:both”></div></li>
+          <li><div class="image"><span>Reliability with a Trustless System</span> The combination of cryptography, verification by many computers, and the<br> requirement for the whole network to agree ensures that we can trust every<br> block on the chain. This creates what is called a “trustless” environment,<br> which eliminates the need for intermediaries like banks or lawyers. </div><div style=”clear:both”></div></li>
+
+          <span class="signupforblockchainblock3listsbottombg">
+          <img class="iconblockchain" src="../../assets/imgs/signupblockchainlogoiconmd.png">
+        </span>
+
+        </ul>
+        <a class="btnyellownew" (click)="scrollToTop()">buy now</a>
+        <div class="signupforblockchainblock3rightbottom">
+          <img src="../../assets/imgs/signupforblockchainblock3bottomrightimg.png" class="signupforblockchainblock3bottomrightimg">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<!-- <ion-content padding>
+  <div class="axplandingformwrapper_signup">
+<form class="form" novalidate [formGroup]="blockchainform">
+
+  <ion-grid>
+
+    <ion-row>
+      <input [formControl]="blockchainform.controls['firstname']" type="text" placeholder="Firstname">
+    </ion-row>
+
+    <ion-row *ngIf="blockchainform.controls['firstname'].valid!=true && blockchainform.controls['firstname'].touched && blockchainform.controls['firstname'].pristine" class="alert alert-danger">
+      <span  class="errorSpan2">BlockChain Firstname field can not be blank</span>
+    </ion-row>
+
+    <ion-row>
+      <input [formControl]="blockchainform.controls['lastname']" type="text" placeholder="Lastname">
+    </ion-row>
+
+    <ion-row *ngIf="blockchainform.controls['lastname'].valid!=true && blockchainform.controls['lastname'].touched && blockchainform.controls['lastname'].pristine"  class="alert alert-danger">
+      <span class="errorSpan2">BlockChain Lastname Field Can not be Blank</span>
+    </ion-row>
+    <ion-row>
+      <input [formControl]="blockchainform.controls['email']" type="text"  placeholder="Email">
+    </ion-row>
+    <ion-row *ngIf="blockchainform.controls['email'].valid!=true && blockchainform.controls['email'].touched && blockchainform.controls['email'].pristine" class="alert alert-danger">
+      <span class="errorSpan2">BlockChain Email Field Can not be Blank</span>
+    </ion-row>
+    <ion-row>
+      <input [formControl]="blockchainform.controls['phone']" type="number" placeholder="Phone">
+    </ion-row>
+    <ion-row *ngIf="blockchainform.controls['phone'].valid!=true && blockchainform.controls['phone'].touched && blockchainform.controls['phone'].pristine"  class="alert alert-danger">
+      <span class="errorSpan2">BlockChain Lastname Field Can not be Blank</span>
+    </ion-row>
+    <ion-row>
+      <input [formControl]="blockchainform.controls['address']" type="text" placeholder="Your Address">
+    </ion-row>
+    <ion-row *ngIf="blockchainform.controls['address'].valid!=true && blockchainform.controls['address'].touched && blockchainform.controls['address'].pristine"  class="alert alert-danger">
+      <span class="errorSpan2">BlockChain address Field Can not be Blank</span>
+    </ion-row>
+    <ion-row>
+      <input [formControl]="blockchainform.controls['city']" type="text" placeholder="Your city">
+    </ion-row>
+    <ion-row *ngIf="blockchainform.controls['city'].valid!=true && blockchainform.controls['city'].touched && blockchainform.controls['city'].pristine"  class="alert alert-danger">
+      <span class="errorSpan2">BlockChain city Field Can not be Blank</span>
+    </ion-row>
+    <ion-row>
+      &lt;!&ndash;<label>City</label>&ndash;&gt;
+      <ion-select [formControl]="blockchainform.controls['state']" placeholder="State">
+        &lt;!&ndash;<ion-option value="">Select State</ion-option>&ndash;&gt;
+        <ion-option  value="{{res.abbreviation}}" *ngFor="let res of state">{{res.name}}</ion-option>
+      </ion-select>
+    </ion-row>
+    <ion-row *ngIf="blockchainform.controls['state'].valid!=true && blockchainform.controls['state'].touched && blockchainform.controls['state'].pristine"  class="alert alert-danger">
+      <span class="errorSpan2">BlockChain state Field Can not be Blank</span>
+    </ion-row>
+    <ion-row>
+      <input [formControl]="blockchainform.controls['zip']" type="text" placeholder="Zip">
+    </ion-row>
+    <ion-row *ngIf="blockchainform.controls['zip'].valid!=true && blockchainform.controls['zip'].touched && blockchainform.controls['zip'].pristine"  class="alert alert-danger">
+      <span class="errorSpan2">BlockChain Zip Field Can not be Blank</span>
+    </ion-row>
+
+  </ion-grid>
+  <button ion-button block class="btnSubmit" type="submit" (click)="blockchainsubmit()">SUBMIT</button>
+
+</form>
+  </div>
+
+</ion-content>-->
+</div>

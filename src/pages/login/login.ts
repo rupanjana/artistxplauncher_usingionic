@@ -27,9 +27,26 @@ export class LoginPage {
   public films:any=null;
   public selmenu:any=null;
   public servererror:any=null;
+  public user_id:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public httpClient: HttpClient,private storage: Storage,private http: HTTP) {
+      this.storage.get('userid').then((val) => {
+          this.user_id = val;
+         console.log('user_id is exist or not--');
+         console.log(this.user_id);
+         if(this.user_id!=null){
+             this.navCtrl.push(MedialistPage);
+         }
+         else{
+          // this.navCtrl.push(LoginPage);
+           console.log('it is in Login Page')
+           }
+         /* setTimeout(()=>{
+              // this.getTicketsaleBanner();
 
+
+          },1000);*/
+      });
   }
 
   ionViewDidLoad() {

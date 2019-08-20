@@ -1,0 +1,100 @@
+<!--
+  Generated template for the ContactusPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle slot="right" class="ionbuttonrightmenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Contact Us</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="contactusbg">
+  <img alt="" src="https://development.artistxp.com/assets/images/axpcontactusleftdivbg01.jpg">
+</div>
+  <div class="axplandingformwrapper_signup">
+  <form class="form" novalidate [formGroup]="contactusform" (ngSubmit)="contactussubmit()"><!-- (ngSubmit) ="contactussubmit()"-->
+    <ion-grid>
+          <ion-row>
+        <input [formControl]="contactusform.controls['firstname']" type="text" placeholder="Firstname">
+      </ion-row>
+
+      <ion-row *ngIf="contactusform.controls['firstname'].valid!=true && contactusform.controls['firstname'].touched && contactusform.controls['firstname'].pristine" class="alert alert-danger">
+        <span class="errorSpan2">Contactusform firstname field can not be blank</span>
+      </ion-row>
+
+      <ion-row>
+        <input [formControl]="contactusform.controls['lastname']" type="text" placeholder="Lastname">
+      </ion-row>
+
+      <ion-row *ngIf="contactusform.controls['lastname'].valid!=true && contactusform.controls['lastname'].touched && contactusform.controls['lastname'].pristine" class="alert alert-danger">
+        <span class="errorSpan2">Contactusform lastname field can not be blank</span>
+      </ion-row>
+
+      <ion-row>
+        <input [formControl]="contactusform.controls['phoneno']" type="number" placeholder="Telephone no">
+      </ion-row>
+
+      <ion-row *ngIf="contactusform.controls['phoneno'].valid!=true && contactusform.controls['phoneno'].touched && contactusform.controls['phoneno'].pristine" class="alert alert-danger">
+        <span class="errorSpan2">Contactusform telephone field can not be blank</span>
+      </ion-row>
+
+      <ion-row>
+        <input [formControl]="contactusform.controls['email']" type="email" placeholder="Username / Email id">
+      </ion-row>
+
+      <ion-row *ngIf="contactusform.controls['email'].valid!=true && contactusform.controls['email'].touched " class="alert alert-danger">
+        <span class="errorSpan2">valid Email id is required</span>
+      </ion-row>
+
+ <!--     <ion-row *ngIf="contactusform.controls['email'].hasError('invalidEmail') && contactusform.controls['email'].touched && contactusform.pristine" class="alert alert-danger">
+        <span class="errorSpan">*Email is required!</span>
+      </ion-row>-->
+
+     <!-- <ion-row *ngIf="contactusform.controls['email'].hasError('invalidEmail') && contactusform.controls['email'].touched && contactusform.controls['email'].pristine">
+        <span style="color: red;" class="errorSpan2">*Email is invalid!</span>
+      </ion-row>-->
+
+
+
+
+      <!--<ion-row *ngIf="loginForm.controls['email'].hasError('invalidEmail') && loginForm.controls['email'].touched && loginForm.pristine" class="alert alert-danger">
+        <span class="errorSpan">*Email is required!</span>
+      </ion-row>-->
+
+      <ion-row>
+        <input [formControl]="contactusform.controls['address']" type="text" placeholder="Enter Address">
+      </ion-row>
+
+      <ion-row *ngIf="contactusform.controls['address'].valid!=true && contactusform.controls['address'].touched && contactusform.controls['address'].pristine" class="alert alert-danger">
+        <span class="errorSpan2">Contactusform address field can not be blank</span>
+      </ion-row>
+     <!-- <ion-row *ngIf="loginForm.controls['email'].hasError('invalidEmail') && loginForm.controls['email'].touched && loginForm.pristine" class="alert alert-danger">
+        <span class="errorSpan">*Email is required!</span>
+      </ion-row>-->
+      <ion-row>
+        <textarea [formControl]="contactusform.controls['message']" type="text" placeholder="messagehere"></textarea>
+      </ion-row>
+
+      <ion-row *ngIf="contactusform.controls['message'].valid!=true && contactusform.controls['message'].touched && contactusform.controls['message'].pristine" class="alert alert-danger">
+        <span class="errorSpan2">Contactusform Message field can not be blank</span>
+      </ion-row>
+
+      <!--<ion-row *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched && loginForm.pristine" class="alert alert-danger">
+        <span class="errorSpan">*Password is required!</span>
+      </ion-row>-->
+      <!--<ion-row *ngIf="errormsgforlogin!='' " class="alert alert-danger">         &lt;!&ndash;if the login info is wrong&ndash;&gt;
+        <span class="errorSpan">{{errormsgforlogin}}</span>
+      </ion-row>-->
+    </ion-grid>
+
+    <button ion-button block class="btnSubmit" type="submit">SUBMIT</button>
+
+  </form>
+  </div>
+</ion-content>

@@ -1,0 +1,95 @@
+<!--
+  Generated template for the CompetitionsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle slot="right" class="ionbuttonrightmenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Competitions</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<!-- <button ion-button class="btn btncom" (click)="opencompetitionrule()">COMPETITION RULES</button> -->
+<!--<a  class="btn btncom" href="">COMPETITION RULES</a>-->
+
+
+<div class="container-fluid communitysignupnewblock1 competitionblock1mainwrapper">
+  <div class="row">
+     <div class="container newwrapper">
+        <div class="communitysignupnewblock1inner">
+           <div class="communitysignupnewblock1left">
+              <div class="bannerleftnew bannerleftnew1">
+                 <h3>AudioDeadline Competitions </h3>
+                 <h4>VOTE FOR YOUR FAVORITE ARTISTS TO<br> WIN THE DEADLINE</h4>
+                 <p>We have a variety of competitions running monthly for artists to compete to win real prizes! They will have the opportunity to show the world what they’ve got in a whole new way! You can vote 5 times a day for each competition category. Invite people from your social networks to come vote for your favorite artist as well! Keep an eye on this page to see who is ahead! Competitions end on the 19th of every month and we will announce the winners right here!</p>
+                 <h5>Please keep in mind some general rules while you vote for<br> your favorites! The judging criteria is </h5>
+                 <ul class="topbannerlistnew topbannerlistnew1">
+                    <li>The quality of Performance</li>
+                    <li>Artistic Merit</li>
+                    <li>Originality</li>
+                    <li>And Personality</li>
+                 </ul>
+              </div>
+           </div>
+           <div class="communitysignupnewblock1right">
+              <div class="formdiv"></div>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+<div class="competitionblockmainwrapper competitionblock2mainwrapper">
+  <div class="competitionblock2subwrapper">
+     <div class="comtextwrapper">
+        <h3>AudioDeadline Competitions will officially start August 5th, 2019!</h3>
+        <h2>Be sure to review the Competition Rules before entering.</h2>
+     </div>
+     <div class="combuttonwrapper"><a class="btn btncom"  (click)="opencompetitionrule()">Competition Rules</a></div>
+  </div>
+</div>
+
+
+<div class="container-fluid competitionblock2 ascompetitionblock2new">
+  <div class="row no-gutter">
+     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 artistsexchangeleftdiv">
+        <div class="sectionbody newmodifieddiv">
+           <div class="row no-gutter sectionheaderinner col-container competitionblock competitionblocknew " *ngFor="let item of competitionlist;">
+              <div class="container-fluid compnewblock2"  [style.background-image]="getbgimg(item.image1)" [style.background-size]="'cover'" [style.background-repeat]="'no-repeat'"  [style.background-position]="'center'">
+                 <div class="compnewblock2wrapperimg">
+                   <img src='https://developmentapi.audiodeadline.com/nodeserver/uploads/{{item.image2}}'>
+                  </div>
+                 <div class="row compnewblock2contentwrapper" id="compwrapper1">
+                    <div class="compnewblock2content">
+                       <h2>{{item.competitionname}}</h2>
+                       <h3>{{item.description}} </h3>
+                       <h4>Submission Entry Starts {{getDateT(item.startdate)}} and runs through {{getDateT(item.enddate)}}.</h4>
+                       <h5><a class="btnpink" (click)="opencompetitionrule()">Competition Rules</a></h5>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <!-- <div class="row no-gutter sectionheaderinner col-container competitionblock competitionblocknew ">
+              <div class="container-fluid compnewblock2" style="background-image: url(&quot;https://developmentapi.audiodeadline.com/nodeserver/uploads/com_banner05-1557466070-1540x4212-1562049842-1920X401.png&quot;); background-size: cover; background-repeat: no-repeat; background-position: center center;">
+                 <div class="compnewblock2wrapperimg"><img src="https://developmentapi.audiodeadline.com/nodeserver/uploads/com_banner05-1557466070-1540x4212-1562049864-295X196.png"></div>
+                 <div class="row compnewblock2contentwrapper" id="compwrapper1">
+                    <div class="compnewblock2content">
+                       <h2>RAPPER COMPETITION</h2>
+                       <h3>Rappers will need to enter two original songs, as well as a music video and a video bio. Winners will be voted onto the Audiodeadline.com show where they will be flown out to LA with a paid for hotel and food! This is a one-of-a-kind opportunity for rappers to showcase their talent in front of millions of people, including A-List artists! At the end of the year, they will get the chance to win the...</h3>
+                       <h4>Submission Entry Starts 1st Jul, 2019 and runs through 15th Jul, 2019.</h4>
+                       <h5><a class="btnpink" href="/competitionrules">Competition Rules</a></h5>
+                    </div>
+                 </div>
+              </div>
+           </div> -->
+        </div>
+     </div>
+  </div>
+</div>
+
+
+</ion-content>

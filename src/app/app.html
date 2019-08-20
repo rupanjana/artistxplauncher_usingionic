@@ -1,4 +1,4 @@
-<ion-menu [content]="content">
+<ion-menu [content]="content" side="start" type="push">
     <ion-header>
         <ion-toolbar>
             <ion-title>
@@ -13,6 +13,9 @@
                 <a (click)="gotopage(p)"  *ngIf="p.type==null">
                     {{p.title}}
                 </a>
+               <!-- <a (click)="gotopage(p)" *ngIf="p.component==null && p.title=='Artistxp Launcher'">
+                    {{p.title}}
+                </a>-->
                 <a  *ngIf="p.type=='multiple'" (click)="selmenuf(p)">
                     {{p.title}} <ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon>
                     <ng-container *ngIf="selmenu==p.title">
@@ -32,6 +35,8 @@
             </ion-item>
 
         </ion-list>
+
+
     </ion-content>
 </ion-menu>
 

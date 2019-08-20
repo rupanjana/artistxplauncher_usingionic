@@ -17,33 +17,7 @@
       <button ion-button menuToggle slot="right" class="ionbuttonrightmenu">
         <ion-icon name="menu"></ion-icon>
       </button>
-      <!--<ion-menu side="end" id="menuid">
-      &lt;!&ndash;<ion-header>
-        <ion-toolbar translucent>
-          <ion-title>Menu</ion-title>
-        </ion-toolbar>
-      </ion-header>&ndash;&gt;
-      <ion-content>
-        <ion-list>
-          <ion-item>
-            <ion-icon name="home" slot="start"></ion-icon>
-            <ion-label>Home</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-icon name="person" slot="start"></ion-icon>
-            <ion-label>Profile</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-icon name="chatbubbles" slot="start"></ion-icon>
-            <ion-label>Messages</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-icon name="settings" slot="start"></ion-icon>
-            <ion-label>Settings</ion-label>
-          </ion-item>
-        </ion-list>
-      </ion-content>
-      </ion-menu>-->
+
 
     </ion-navbar>
 
@@ -57,7 +31,7 @@
 
   <img src="../../assets/imgs/mb_logo.png" alt="#" class="medialistlogo" />
 
-    <div class="medialist_con1_btnwrapper">
+    <div class="medialist_con1_btnwrapper" *ngIf="this.buttonflag==false">
 
   <button (click)="gotomedia()">launch artistXP</button>
   <button (click)="logout()">log Out</button>

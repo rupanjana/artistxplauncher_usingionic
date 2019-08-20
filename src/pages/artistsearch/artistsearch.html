@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>artistsearch</ion-title>
+    <ion-title>Artist Search</ion-title>
     <button ion-button menuToggle slot="right" class="ionbuttonrightmenu">
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -21,10 +21,16 @@
               <div class="row no-gutter sectionheaderinner col-container">
                 <div class="col tendingartistsinglecolleft">
                   <div class="imagewrappertamain">
-                    <a target="_blank" href="/profile">
-                      <img alt="rightbannerdiv screen6" style="cursor: pointer" src="https://s3.amazonaws.com/file.development.audiodeadline.com/pictures/{{p._id}}/{{p.images}}">
+                    <a target="_blank" href="/profile" *ngIf="p.images==null" class="imgwrapperImage">
+                      <img  src="../../assets/imgs/default_profile_pic.jpg">
                     </a>
-                    <a target="_blank" href="/profile"></a>
+                    <a target="_blank" href="https://development.artistxp.com/userprofile/{{p._id}}/{{p.username}}" *ngIf="p.images!=null" class="imgwrapperImage">
+                      <img alt="rightbannerdiv screen6" style="cursor: pointer" src="https://s3.amazonaws.com/file.development.audiodeadline.com/{{p.images}}">
+                    </a>
+
+                     <a target="_blank" href="https://development.artistxp.com/profile" *ngIf="p._id==user_id" class="imgwrapperImage">
+                      <img alt="rightbannerdiv screen6" style="cursor: pointer" src="https://s3.amazonaws.com/file.development.audiodeadline.com/{{p.images}}">
+                    </a>
                   </div>
                 </div>
                 <div class="col tendingartistsinglecolright">
@@ -49,24 +55,16 @@
                     </div>
                     <div class="contentbottom">
                       <div class="feedslinks">
-                        <span class="feedslinks1">
-                          <ion-icon class="fa fa-eye" name="ios-user"></ion-icon>[ 13 ]</span>
-                        <span class="feedslinks1">
-                          <i class="fa fa-eye"></i>
-                        </span>
-                        <span class="feedslinks2"><ion-icon class="fa fa-music" name="ios-music"></ion-icon>[ 31 ]</span>
-                        <span class="feedslinks2"><ion-icon class="fa fa-eye" name="ios-eye"></ion-icon></span>
-                        <span class="feedslinks3"><ion-icon class="fa fa-youtube-play" name="ios-youtube"></ion-icon>[ 90 ]</span>
-                        <span class="feedslinks3"><ion-icon class="fa fa-eye" name="ios-eye"></ion-icon></span>
-                        <span class="feedslinks3"><ion-icon class="fa fa-image" name="ios-image"></ion-icon>[ 141 ]</span>
-                        <span class="feedslinks3"><ion-icon class="fa fa-eye" name="ios-eye"></ion-icon></span>
+                        <span class="feedslinks1"><ion-icon name="people" class="fa fa-users"></ion-icon>[ {{p.countfollow}} ]</span>
+                        <span class="feedslinks2"><ion-icon class="fa fa-music" name="musical-notes"></ion-icon>[ {{p.countofmusic}} ]</span>
+                        <span class="feedslinks3"><ion-icon name="logo-youtube" class="fa fa-youtube-play"></ion-icon>[ {{p.countofvideo}} ]</span>
+                        <span class="feedslinks3"><ion-icon class="fa fa-image" name="ios-image"></ion-icon>[ {{p.countofpicture}} ]</span>
                         <div class="asbuttonwrappernew">
-
                         </div>
                         <span class="feedslinks4">
-                          <div class="btnviewprofilenew">
+                        <!--  <div class="btnviewprofilenew">
                             <a class="btngraygradient" href="/profile">Back To Profile</a>
-                          </div>
+                          </div>-->
                         </span>
                       </div>
                     </div>

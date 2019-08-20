@@ -3,29 +3,33 @@ import { Platform,NavController,Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Deeplinks } from '@ionic-native/deeplinks';
-import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Instagram } from '@ionic-native/instagram';
 import { Storage } from '@ionic/storage';
 import { MediaformPage } from '../pages/mediaform/mediaform';
 import { LoginPage } from '../pages/login/login';
 import { ShareinstagramPage } from '../pages/shareinstagram/shareinstagram';
-
+import {InAppBrowser} from '@ionic-native/in-app-browser';
 
 import { MediawallPage } from '../pages/mediawall/mediawall';
-//import {TermsPage} from "../pages/terms/terms";
+import {HomePage} from "../pages/home/home";
 import { AllmediaPage } from '../pages/allmedia/allmedia';
 import { TrendingmediaPage } from '../pages/trendingmedia/trendingmedia';
 import { SearchPage } from "../pages/search/search";
-import { MenuController } from 'ionic-angular';
+import { ContactusPage } from "../pages/contactus/contactus";
+import { BlastorpassPage } from "../pages/blastorpass/blastorpass";
+import { ArtistexchangePage } from "../pages/artistexchange/artistexchange";
+import { MenuController,ModalController } from 'ionic-angular';
+
 @Component({
     templateUrl: 'app.html'
 })
 export class MyApp {
     rootPage:any=LoginPage;
     @ViewChild(Nav) navChild:NavController;
-    pages: Array<{title: string, component: any, type:any,submenu:any }>
-    //public selmenu:any=null;
-    constructor(public platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,private deeplinks: Deeplinks,private iab: InAppBrowser,private instagram: Instagram,private storage: Storage,public menu:MenuController) {
+  // public pages: Array[{title: string, component: any, type:any,submenu:any }];
+   public pages:any=[{}];
+    public selmenu:any=null;
+    constructor(public platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,private deeplinks: Deeplinks,private instagram: Instagram,private storage: Storage,public menu:MenuController,public inappbrowser:InAppBrowser,public modalctrl:ModalController) {
         this.platform.ready().then(() => {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
@@ -65,34 +69,112 @@ export class MyApp {
 
                        ]
                    },
-
-
-
-
-                 /*  {
-                       title:'Submenu',type:'multiple',
-                       submenu:[
-                           {
-                       title:'medialist',component:'MediaformPage'
-                       },
-                       {
-                           title:'Search',component:'SearchPage'
-                       }]
+                   {
+                       title:'Blast or Pass',component:'BlastorpassPage'
                    },
                    {
-                       title:'Submenu2',type:'multiple',
-                       submenu:[
-                           {
-                       title:'medialist',component:'MediaformPage'
-                        },
-                       {
-                           title:'Search',component:'SearchPage'
-                       }]
-                   }*/
+                       title:'Artist Exchange',component:null
+                   },
+                   {
+                       title:'Block Chain',component:'BlockchainPage'
+                   },
+                   {
+                       title:'Competitions ',component:'CompetitionsPage'
+                   },
+                   {
+                       title:'Contact Us',component:'ContactusPage'
+                   },
+                   {
+                     title:'Audiodeadline',component:null
+                   },
+                   {
+                       title:'Help Center',component:null
+                   },
+                   {
+                       title:'Privacy Statement',component:null
+                   },
+                   {
+                       title:'Terms of Use',component:null
+                   },
+                   {
+                       title:'Refund Policy',component:null
+                   },
+                   {
+                       title:'Artistxp Launcher',component:null
+                   },
+                   {
+                       title:'Logout',component:null
+                   }
                ];
 
             }
+            this.pages=[
+             {
+             title:'Medialist',component:'MediaformPage'
+             },
+             {
+             title:'Mediawall',component:'MediawallPage',type:'multiple',
+             submenu:[
+             {
+             title:'All Media',component:'AllmediaPage'
+             },
+             {
+             title:'Trending Media', component:'TrendingmediaPage'
+             }
+             ]
 
+             },
+             {
+             title:'Search',component:'SearchPage',type:'multiple',
+             submenu:[
+             {
+             title:'Artist Search',component:'ArtistsearchPage'
+             },
+             {
+             title:'User Search',component:'UsersearchPage'
+             }
+
+             ]
+             },
+                {
+                    title:'Blast or Pass',component:'BlastorpassPage'
+                },
+                {
+                    title:'Artist Exchange',component:null
+                },
+                {
+                    title:'Block Chain',component:'BlockchainPage'
+                },
+                {
+                    title:'Competitions ',component:'CompetitionsPage'
+                },
+                {
+                    title:'Contact Us',component:'ContactusPage'
+                },
+                {
+                    title:'Audiodeadline',component:null
+                },
+                {
+                    title:'Help Center',component:'HelpcenterPage'
+                },
+                {
+                    title:'Privacy Statement',component:'PrivacystatementPage'
+                },
+                {
+                    title:'Terms of Use',component:'TermsofusePage'
+                },
+                {
+                    title:'Refund Policy',component:'RefundpolicyPage'
+                },
+                {
+                    title:'Artistxp Launcher',component:null
+                },
+               {
+                 title:'Logout',component:null
+                }
+
+
+             ];
 
             this.deeplinks.routeWithNavController(this.navChild, {
                 //'/about-us': ShareinstagramPage,
@@ -147,7 +229,37 @@ export class MyApp {
     }
     gotopage(page:any){
         console.log(page);
-        this.navChild.setRoot(page.component);
+        if(page.component==null){
+            if(page.title=='Artistxp Launcher'){
+                this.gotomedia();
+            }
+            if(page.title=='Logout'){
+                this.logout();
+            }
+            if(page.title=='Artist Exchange'){
+                this.openMyModal();
+            }
+            if(page.title=='Audiodeadline'){
+               this.openaudiodeadline();
+            }
+            /*if(page.title=='Help Center'){
+               this.openhelpcenter();
+            }
+            if(page.title=='Privacy Statement'){
+                this.openprivacystatement();
+            }
+            if(page.title=='Terms of Use'){
+                this.opentermsofuse();
+            }
+            if(page.title=='Refund Policy'){
+                this.openrefundpolicy();
+            }*/
+        }
+       else{
+            this.navChild.setRoot(page.component);
+        }
+
+
         this.menu.close();
     }
     selmenuf(page:any){
@@ -155,4 +267,36 @@ export class MyApp {
         else
         this.selmenu=page.title;
     }
+    gotomedia(){
+        this.inappbrowser.create('https://development.artistxp.com/','_system');
+
+    }
+    openaudiodeadline(){
+        this.inappbrowser.create('https://audiodeadline.com/','_system');
+    }
+    /*openhelpcenter(){
+        this.inappbrowser.create('https://development.artistxp.com/helpcentergetstarted/getstarted','_system');
+    }
+    openprivacystatement(){
+        this.inappbrowser.create('https://development.artistxp.com/privacypolicy','_system');
+    }
+    opentermsofuse(){
+        this.inappbrowser.create('https://development.artistxp.com/termsandconditions','_system');
+    }
+    openrefundpolicy(){
+        this.inappbrowser.create('https://development.artistxp.com/refundpolicy','_system');
+    }*/
+    logout(){
+        this.storage.clear().then(()=>{
+            console.log('storage clear');
+            this.navChild.setRoot(HomePage);
+        });
+
+    }
+    public openMyModal(){
+        var modalpage=this.modalctrl.create('ArtistexchangePage');
+        modalpage.present();
+    }
+
+
 }
