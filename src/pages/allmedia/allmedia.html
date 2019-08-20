@@ -362,8 +362,8 @@
                               <div class="audioinfousername"> By - <span> </span></div>
                           </div>
                           <img alt="RTR1" src="https://artistxp.com/assets/images/pause-gif-image.jpg">
-                          <audio id="audioplayerid{{p._id}}"> 
-                              <source type="audio/mpeg" [attr.src]="p.posts.musicurl" id="audioid">
+                          <audio id="audioplayerid{{p._id}}">
+                              <source type="audio/mpeg" [attr.src]="p.posts.musicurl">
                           
                                 Your browser does not support the audio tag.
         
@@ -372,48 +372,33 @@
                                    <!--audio sliders-----------start-->
                       <div class="sectionheaderinnercontainer">
                         <div class="playsilider">
-                            <ion-range  min=lower max=upper options="options2"
-                             (ionChange)="changeaudioplayertimer(p)">
-                  
+                          <!-- min="{{options2.lower}}" max="{{options2.upper}}" -->
+                            <ion-range  step="{{value2[p._id]}}"
+                             (ionChange)="changeaudioplayertimer(p)" >
                                 <ion-icon slot="start" size="small" name="sunny"></ion-icon>
-                                <ion-icon slot="end" name="sunny"> </ion-icon>
+                                <ion-icon slot="end" name="sunny"></ion-icon>
                             </ion-range>
-                           
                         </div>
-                        
                         <div class="playericons">
                             <div class="audioicon_d audioicon1">
-                                <p>00:00:00/00:00:00 </p>
-                                <!-- <p>{{convertsecstoformat(value2[p._id])}}/{{convertsecstoformat(p.duration)}}</p> -->
+                                <!-- <p>00:00:00/00:00:00</p> -->
+                                <p>{{convertsecstoformat(value2[p._id])}}/{{convertsecstoformat(p.audioDuration)}}</p>
+                                <!-- {{convertsecstoformat(p.audioDuration)}} -->
                             </div>
                             <div class="audioicon_d audioicon2">
-
-                              <!--  {{!ismusicflag}} i.e true -->
                                 <span class="icons1"><img alt="#" src="https://artistxp.com/assets/images/audio_leftarrow.png"></span>
                                 <span class="icons2" *ngIf="!ismusicflag" (click)="playmusic(p)"><img alt="#" src="https://artistxp.com/assets/images/audio_playicon.png"></span>
-                                <span class="icons2" *ngIf="ismusicflag" (click)="playmusic(p)"><img alt="#" src="https://artistxp.com/assets/images/audio_pauseicon.png"></span>
+                                <span class="icons2"  *ngIf="ismusicflag"  (click)="playmusic(p)"><img alt="#" src="https://artistxp.com/assets/images/audio_pauseicon.png" ></span>
                                 <span class="icons3"><img alt="#" src="https://artistxp.com/assets/images/audio_rightarrow.png"></span>
-                            </div> 
+                            </div>
                             <div class="audioicon_d audioicon3">
                                 <span class="icons01"><img alt="#" src="https://artistxp.com/assets/images/audioicon1-inactive.png"></span>
                                 <span class="icons02"><img alt="#" src="https://artistxp.com/assets/images/audioicon2.png"></span>
                                 <span class="icons03">
-                          <ion-range min= lower max= upper> 
+                          <ion-range value="20">
                             <ion-icon slot="start" size="small" name="sunny"></ion-icon>
                             <ion-icon slot="end" name="sunny"></ion-icon>
                           </ion-range>
-                          <!-- <ng5-slider [(value)]="value2[val._id]"
-                           [options]="options2" (userChange)="changeaudioplayertimertrending()"
-                            (valueChange)="setval1()"></ng5-slider> -->
-
-
-                          <!-- <ion-range min="-200" max="200" [(ngModel)]="saturation" color="secondary">
-                              <ion-label range-left>-200</ion-label>
-                              <ion-label range-right>200</ion-label>
-                            </ion-range> -->
-                         
-
-
                         </span>
                             </div>
                         </div>

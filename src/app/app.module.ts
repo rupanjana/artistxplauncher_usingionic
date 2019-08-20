@@ -17,8 +17,8 @@ import { AllmediaPage } from '../pages/allmedia/allmedia';
 import { MediawallPage } from '../pages/mediawall/mediawall';
 import { TermsPage } from '../pages/terms/terms';
 import { SearchPage } from '../pages/search/search';
-import { ContactusPage} from '../pages/contactus/contactus';
-import { TermsofusePage } from '../pages/termsofuse/termsofuse';
+// import { ContactusPage} from '../pages/contactus/contactus';
+// import { TermsofusePage } from '../pages/termsofuse/termsofuse';
 
 import { GetstartedPage } from '../pages/getstarted/getstarted';
 import { SupportartistresourcePage } from '../pages/supportartistresource/supportartistresource';
@@ -35,7 +35,10 @@ import { VideoPlayer } from '@ionic-native/video-player';
   declarations: [
     MyApp,
     HomePage,
-    ShareinstagramPage,LoginPage,MedialistPage,ContactusPage,TermsofusePage,GetstartedPage,SupportartistresourcePage,
+    ShareinstagramPage,LoginPage,MedialistPage,
+    // ContactusPage,
+    // TermsofusePage,
+    GetstartedPage,SupportartistresourcePage,
     ArtistxphowtoPage,AccountPage,PolicyandsafetyPage
   ],
   imports: [
@@ -48,7 +51,10 @@ import { VideoPlayer } from '@ionic-native/video-player';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,ShareinstagramPage,LoginPage,MedialistPage,ContactusPage,TermsofusePage,GetstartedPage,SupportartistresourcePage,
+    HomePage,ShareinstagramPage,LoginPage,MedialistPage,
+    //ContactusPage,
+    // TermsofusePage,
+    GetstartedPage,SupportartistresourcePage,
     ArtistxphowtoPage,AccountPage,PolicyandsafetyPage
 
   ],

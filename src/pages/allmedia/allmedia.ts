@@ -49,6 +49,7 @@ export class AllmediaPage{
   public value3:any=0;
   public playstatetrending:any;
   public audioDuration:any;
+
   public url="https://s3.amazonaws.com/file.development.audiodeadline.com";
   /*public dinterval:any=2;*/
  /* public videoarray:any=[];*/
@@ -211,12 +212,20 @@ export class AllmediaPage{
                  console.log('it is in else block when ismusicflag is false');
                  console.log(this.ismusicflag);
                this.value2[val._id] = 0;
+               myAudio.currentTime=this.value2[val._id];
                clearInterval(this.playstatetrending);
                myAudio.play();
-               this.options2 = {
-                 lower: 0,
-                 upper: myAudio.duration.toFixed(0)
-               };
+            //    let playtimeinterval=setInterval(()=>{
+            //     this.changeaudioplayertimer(val._id);
+            //    },1000);
+              
+            //    this.options2 = {
+            //      lower: 0,
+            //      upper: myAudio.duration.toFixed(0)
+                 
+            //    };
+
+
                myAudio.volume=this.value3/100;
                console.log(myAudio.volume);
                this.audioDuration= myAudio.duration.toFixed(0);
@@ -226,9 +235,9 @@ export class AllmediaPage{
                this.playstatetrending = setInterval(() => {
                  //console.log('in onplay interval ....');
                  //console.log(myAudio.currentTime);
-                 this.value2[val._id] = (myAudio.currentTime.toFixed(0));
+                 this.value2[val._id] = myAudio.currentTime.toFixed(0);
                 
-               }, 1800);
+               }, 1000);
                this.ismusicflag = true;
              }
              myAudio.onpause = function () {
@@ -253,11 +262,25 @@ export class AllmediaPage{
      }
 
 
-        changeaudioplayertimer(val){
+        changeaudioplayertimer(val2){
+            let playtimeinterval=setInterval(()=>{
             let myAudio:any={};
-            myAudio=document.querySelector('#audioplayerid'+val._id);
+            myAudio=document.querySelector('#audioplayerid'+val2._id);
            // console.log(myAudio);
-            myAudio.currentTime=this.value2[val._id];
+            myAudio.currentTime=this.value2[val2._id];
+            console.log('in changeaudioplayertimer myAudio.currenttime value----');
+            console.log( myAudio.currentTime);
+            if(myAudio!=null){
+                this.audioDuration = myAudio.duration.toFixed(0);
+            //     this.options2={
+            //         lower:0,
+            //         upper: myAudio.duration.toFixed(0)
+            // }
+
+            
+               
+            }
+        },1000);
              }
 
         setval1(val){
@@ -674,11 +697,16 @@ export class AllmediaPage{
 
                 setTimeout(()=> {   
                     let myAudio:any = {};
+                    myAudio=  document.querySelector("#audioplayerid"+this.tempmusicarray[i]._id);
                     if(myAudio!=null){
-                        myAudio=  document.querySelector("#audioplayer4"+this.tempmusicarray[0]._id);
+                        this.audioDuration = myAudio.duration.toFixed(0);
+                         console.log(this.audioDuration);
+                      this.value2[this.tempmusicarray[i]._id]  = 0;
                     }
-                      if(myAudio!=null)this.audioDuration = myAudio.duration.toFixed(0);
-                      this.value2[this.tempmusicarray[0]._id]  = 0;
+                    console.log('myAudio after filter');
+                    console.log(myAudio);
+                      if(myAudio!=null) this.audioDuration = myAudio.duration.toFixed(0);
+                      this.value2[this.tempmusicarray[i]._id]  = 0;
                     if(myAudio!=null)
                     {
                         this.options2= {

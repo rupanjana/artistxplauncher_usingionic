@@ -4,7 +4,7 @@ import { TermsofusePage } from './termsofuse';
 
 @NgModule({
   declarations: [
-    //TermsofusePage,
+    TermsofusePage,
   ],
   imports: [
     IonicPageModule.forChild(TermsofusePage),
