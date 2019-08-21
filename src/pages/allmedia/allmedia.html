@@ -358,7 +358,7 @@
                         <div class="imgwrapper" *ngIf="p.post_type=='music'">
                           <div class="audioinfo">
                               <div class="audioinfologo"><img alt="%" src="https://artistxp.com/assets/images/artistheaderlogo.png"></div>
-                              <div class="audioinfotitle">{{p.posts.title_music}} </div>
+                              <div class="audioinfotitle">{{p.posts.title_music}}</div>
                               <div class="audioinfousername"> By - <span> </span></div>
                           </div>
                           <img alt="RTR1" src="https://artistxp.com/assets/images/pause-gif-image.jpg">
@@ -374,7 +374,7 @@
                         <div class="playsilider">
                           <!-- min="{{options2.lower}}" max="{{options2.upper}}" -->
                             <ion-range  step="{{value2[p._id]}}"
-                             (ionChange)="changeaudioplayertimer(p)" >
+                             (ionChange)="setval1(p)" >
                                 <ion-icon slot="start" size="small" name="sunny"></ion-icon>
                                 <ion-icon slot="end" name="sunny"></ion-icon>
                             </ion-range>
@@ -382,7 +382,7 @@
                         <div class="playericons">
                             <div class="audioicon_d audioicon1">
                                 <!-- <p>00:00:00/00:00:00</p> -->
-                                <p>{{convertsecstoformat(value2[p._id])}}/{{convertsecstoformat(p.audioDuration)}}</p>
+                                <p>{{convertsecstoformat(value2[p._id])}}/{{convertsecstoformat(audioDuration)}}</p>
                                 <!-- {{convertsecstoformat(p.audioDuration)}} -->
                             </div>
                             <div class="audioicon_d audioicon2">

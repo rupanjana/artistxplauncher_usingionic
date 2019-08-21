@@ -54,6 +54,7 @@ export class TrendingmediaPage {
          // alert(JSON.stringify(result));
           if(result.status=='success'){
           this.resultoftrendingmediadata=result.items;
+          console.log('resultoftrendingmediadata------------');
             console.log(this.resultoftrendingmediadata);
            // alert(this.resultoftrendingmediadata);
           }

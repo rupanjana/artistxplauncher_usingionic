@@ -31,6 +31,7 @@ export class AllmediaPage{
   public allmeadiadatasearchrestult: any;
   public searchArray:any=[];
   public serverSearchArray:any=[];
+ // public srversearcharray1:any=[];
   public theCheckbox1=false;
   public theCheckbox2=false;
   public theCheckbox3=false;
@@ -61,8 +62,10 @@ export class AllmediaPage{
     this.storage.get('userid').then((val) => {
       this.user_id = val;
         this.allmedia();
+        this.filterByMediaDefault();
         setTimeout(()=>{
-            this.filterByMediaDefault();
+            //this.allmedia();
+          //  this.filterByMediaDefault();
         },1000);
         /*this.filterByMediaDefault();*/
 
@@ -72,20 +75,21 @@ export class AllmediaPage{
           //this.allmedia();
 
           setTimeout(()=>{
-              this.allmedia();
+            //this.allmedia();
+           // this.filterByMediaDefault();
           },1000);
       });
 
      // this.value2=0;        // audio duration slider
-     this.options2={
-        lower:0,
-        upper:200
-     };
+    //  this.options2={
+    //     lower:0,
+    //     upper:200
+    //  };
       this.value3=75;           //trending volume slider
-      this.options3={
-        lower:0,
-        upper:100
-      };
+    //   this.options3={
+    //     lower:0,
+    //     upper:100
+    //   };
 
   }
    /* ngOnInit(){
@@ -215,17 +219,6 @@ export class AllmediaPage{
                myAudio.currentTime=this.value2[val._id];
                clearInterval(this.playstatetrending);
                myAudio.play();
-            //    let playtimeinterval=setInterval(()=>{
-            //     this.changeaudioplayertimer(val._id);
-            //    },1000);
-              
-            //    this.options2 = {
-            //      lower: 0,
-            //      upper: myAudio.duration.toFixed(0)
-                 
-            //    };
-
-
                myAudio.volume=this.value3/100;
                console.log(myAudio.volume);
                this.audioDuration= myAudio.duration.toFixed(0);
@@ -263,7 +256,6 @@ export class AllmediaPage{
 
 
         changeaudioplayertimer(val2){
-            let playtimeinterval=setInterval(()=>{
             let myAudio:any={};
             myAudio=document.querySelector('#audioplayerid'+val2._id);
            // console.log(myAudio);
@@ -280,7 +272,7 @@ export class AllmediaPage{
             
                
             }
-        },1000);
+        
              }
 
         setval1(val){
@@ -288,6 +280,9 @@ export class AllmediaPage{
             myAudio=document.querySelector('#audioplayerid'+val._id);
             //console.log(myAudio);
             myAudio.currentTime=this.value2[val._id];
+            if(myAudio!=null){
+                this.audioDuration = myAudio.duration.toFixed(0);
+            }
         }
 
 
@@ -348,26 +343,28 @@ export class AllmediaPage{
 
  
     allmedia(){
-        //alert(this.user_id);
+        alert(this.user_id);
         this.allmediadata = this.httpClient.post('http://developmentapi.audiodeadline.com:3090/getallmedia',{user_id:this.user_id},{});
         this.allmediadata
             .subscribe(data => {
                 let result: any;
                 result = data;
-
+                 console.log('after call getallmedia function show result ----------------------');
+                 console.log(result.data);
                 //alert(JSON.stringify(result));
 
                 if (result.status == 'success') {
                     this.resultinparse=JSON.stringify(result.data);
                     //alert(this.resultinparse);
                     this.resultinparse=result.data;
-                    console.log('resultinparse');
+                    console.log('resultinparse------------------------');
                     console.log(this.resultinparse);
                     this.allmediaarray1=result.data;
                     /*console.log("allmediaarray");
                     console.log(this.allmediaarray);*/
-                    console.log(this.resultinparse);
+                    
                     //alert(this.resultinparse);
+                   
                 }else{
                     console.log('error');
                 }
@@ -609,7 +606,7 @@ export class AllmediaPage{
             this.resultinparse=tvarr;
             this.resultinparse.sort(this.dynamicSort("-posts_id"));
 
-            console.log('resultinparse after filter -- ');
+            console.log('resultinparse after filter11 -- ');
             console.log(this.resultinparse);
            /* this.dinterval+=2;*/
         }else{
@@ -629,12 +626,13 @@ export class AllmediaPage{
         this.allmeadiadatasearchrestult=this.httpClient.post('https://developmentapi.audiodeadline.com:6090/allmediadatasearch',{"user_id":this.user_id,"searcharr":this.searchArray});
 
         this.allmeadiadatasearchrestult.subscribe(res=>{
-            console.log(res);
+            console.log(res); 
             let result:any;
             result=res;
-            console.log('result in filter media');
+            console.log('result in filter media========');
             console.log(result);
             this.serverSearchArray=result.items;/*serversearch array is hold the all value  of music video and picture*/
+            //this.srversearcharray1=result.item;
             alert('print serversearcharray');
             console.log(this.serverSearchArray);
             this.tempvideoarray=result.items;
@@ -695,37 +693,39 @@ export class AllmediaPage{
                 console.log('musicurl add in posts');
                 console.log(this.tempmusicarray[i].posts.musicurl);
 
-                setTimeout(()=> {   
+               
+
+                  setTimeout(()=> {    //<<<---    using ()=> syntax
                     let myAudio:any = {};
-                    myAudio=  document.querySelector("#audioplayerid"+this.tempmusicarray[i]._id);
                     if(myAudio!=null){
-                        this.audioDuration = myAudio.duration.toFixed(0);
-                         console.log(this.audioDuration);
-                      this.value2[this.tempmusicarray[i]._id]  = 0;
+                        myAudio=  document.querySelector("#audioplayerid"+this.tempmusicarray[i]._id);
                     }
-                    console.log('myAudio after filter');
-                    console.log(myAudio);
-                      if(myAudio!=null) this.audioDuration = myAudio.duration.toFixed(0);
+                      if(myAudio!=null){
+                          this.audioDuration = myAudio.duration.toFixed(0);
+                      }
                       this.value2[this.tempmusicarray[i]._id]  = 0;
-                    if(myAudio!=null)
-                    {
-                        this.options2= {
-                      lower: 0,
-                      upper: myAudio.duration.toFixed(0)
-                    };
-                }
+                    // if(myAudio!=null)this.options2= {
+                    //   floor: 0,
+                    //   ceil: myAudio.duration.toFixed(0)
+                    // };
     
-                    if(myAudio!=null){
-                        myAudio.volume=this.value3/100;
-                    } 
                     
+                    if(myAudio!=null) {
+                        myAudio.volume=this.value3/100;
+                    }
+                    //this.value=75;
+                    /* console.log('audioDuration for first time loading');
+                     console.log(this.audioDurationfortrending);*/
                   }, 1000);
+
+
+
 
                 }
 
             
             }
-            console.log('this.tempvideoarray');
+            console.log('this.tempvideoarray-----------------');
             console.log(this.tempvideoarray);
 
         })

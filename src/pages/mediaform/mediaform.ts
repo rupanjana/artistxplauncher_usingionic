@@ -137,11 +137,14 @@ export class MediaformPage {
     this.userdetails = this.httpclient.post('http://developmentapi.audiodeadline.com:3090/datalist',{source:'user',condition:{_id_object:this.user_id}},{});
     this.userdetails
         .subscribe(data => {
-          // console.log('my data: ', data);
+           console.log('my data: ', data);
           let result:any;
           result = data;
-          //alert(result);
+          alert(result);
+          console.log(result.res[0]);
+          console.log(result.res[0].username);
           this.username = result.res[0].username;
+          console.log(this.username);
           if(result.res[0].sponserurl!=null){
             this.sponserflag = 1;
             this.sponserimage = result.res[0].sponserimage;
